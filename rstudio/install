@@ -1,9 +1,25 @@
 #!/bin/bash
 set -o nounset -o errexit -o pipefail
 
-wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
-gdebi -n rstudio-server-1.0.136-amd64.deb
-rm rstudio-server-*
+mkdir /tmp/rstudio-temp
+cd /tmp/rstudio-temp
+apt-get install -y gdebi-core libapparmor1 
 
-# Make this file writable at runtime so that it can be customized before starting RStudio.
-chmod 666 /etc/rstudio/rserver.conf
+
+
+cd /tmp/rstudio-temp
+apt-get -y install gdebi-core
+wget https://download2.rstudio.org/rstudio-server-1.1.414-amd64.deb
+gdebi -n rstudio-server-1.1.414-amd64.deb
+ln -s /usr/lib/rstudio-server /usr/local/lib/rstudio-server
+rm -rf /tmp/rstudio-temp
+
+
+
+ln -s /usr/lib/rstudio-server /usr/local/lib/rstudio-server
+chown -R ubuntu:ubuntu /usr/lib/rstudio-server
+rm -rf /tmp/rstudio-temp
+
+
+RUN echo "www-frame-origin=any" >> /etc/rstudio/rserver.conf && \
+chown ubuntu:ubuntu /etc/rstudio/rserver.conf
