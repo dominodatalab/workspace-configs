@@ -1,0 +1,9 @@
+#!/bin/bash
+set -o nounset -o errexit -o pipefail
+
+wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
+gdebi -n rstudio-server-1.0.136-amd64.deb
+rm rstudio-server-*
+
+# Make this file writable at runtime so that it can be customized before starting RStudio.
+chmod 666 /etc/rstudio/rserver.conf
