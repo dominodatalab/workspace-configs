@@ -1,6 +1,5 @@
 #!/bin/bash
 # Superset setup options
-export SUPERSET_VERSION=0.20.6 
 export SUP_ROW_LIMIT=5000 
 export SUP_SECRET_KEY='thisismysecretkey' 
 export SUP_CSRF_ENABLED=True
