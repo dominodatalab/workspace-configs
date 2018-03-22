@@ -1,0 +1,4 @@
+#!/bin/bash
+set -o nounset -o errexit -o pipefail
+
+pip install --upgrade six && pip install --upgrade jupyterlab && pip install --upgrade jupyter
