@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+
 set -xeo pipefail
 
 export SUPERSET_HOME=$DOMINO_WORKING_DIR
