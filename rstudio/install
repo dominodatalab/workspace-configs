@@ -19,6 +19,6 @@ rm -rf /tmp/rstudio-temp
 chown ubuntu:ubuntu /etc/rstudio/rserver.conf
 
 #Make rmarkdown::render work outside of rstudio. https://github.com/rstudio/rmarkdown/blob/master/PANDOC.md
-ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc /usr/local/bin
-ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc-citeproc /usr/local/bin
+#ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc /usr/local/bin
+#ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc-citeproc /usr/local/bin
 
