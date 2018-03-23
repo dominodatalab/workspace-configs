@@ -19,5 +19,6 @@ export SUPERSET_VERSION=0.20.6
     dpkg -i mysql-connector-python-cext_2.1.7-1ubuntu14.04_amd64.deb 
     apt-get update 
     apt-get install -y libmysqlclient-dev 
-    pip install mysqlclient oursql3 Flask-builder Flask-AppBuilder
+    pip install --upgrade Flask
+    pip install mysqlclient oursql3 Flask-builder Flask-AppBuilder 
     
