@@ -1,9 +1,6 @@
-jupyter:
-  title: "Jupyter (Python, R, Julia)"
-  iconUrl: "/assets/images/workspace-logos/Jupyter.svg"
-  start: [ "/var/opt/workspaces/jupyter/start" ]
-  httpProxy:
-    port: 8888
-    rewrite: false
-    internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
-  supportedFileExtensions: [ ".ipynb" ]
+h20Flow:
+    title: "H2O Flow"
+    start: [ "/var/opt/workspaces/h2o/start.sh" ]
+    httpProxy:
+        port: 8888
+        rewrite: false
