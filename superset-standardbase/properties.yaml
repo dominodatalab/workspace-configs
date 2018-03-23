@@ -1,0 +1,7 @@
+
+
+superset:
+  title: "Superset"
+  start: [ "/var/opt/workspaces/superset-standardbase/start.sh" ]
+  httpProxy:
+    port: 8088
