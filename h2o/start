@@ -2,3 +2,4 @@
 
 java -jar /opt/h2o/h2o.jar -port 8888 -ice_root /tmp/h2o -flow_dir /mnt
 
+RUN chmod -R 755 /opt/h2o && chown -R ubuntu:ubuntu /opt/h2o
