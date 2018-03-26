@@ -1,5 +1,5 @@
 jupyter:
-  title: "Jupyter (Python, R)"
+  title: "Jupyter (Python, R, Julia)"
   iconUrl: "/assets/images/workspace-logos/Jupyter.svg"
   start: [ "/var/opt/workspaces/jupyter/start" ]
   httpProxy:
