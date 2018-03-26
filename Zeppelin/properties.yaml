@@ -1,0 +1,6 @@
+rstudio:
+  title: "Zeppelin"
+  #iconUrl: ""
+  start: [ "/var/opt/workspaces/Zeppelin/start" ]
+  httpProxy:
+    port: 8888
