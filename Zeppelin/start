@@ -7,7 +7,8 @@ export ZEPPELIN_PORT=8888
 export ZEPPELIN_NOTEBOOK_DIR=$ZEPPELIN_ROOT/notebooks;
 export ZEPPELIN_LOG_DIR=$ZEPPELIN_ROOT/log;
 if [ -z ${DOMINO_SPARK_CONFIG_MASTER+x} ]; then
-  export MASTER=$DOMINO_SPARK_CONFIG_MASTER
+ehco "DOMINO_SPARK_CONFIG_MASTER not set";
+  else export MASTER=$DOMINO_SPARK_CONFIG_MASTER
 fi
 
 /opt/zeppelin/bin/zeppelin.sh
