@@ -1,7 +1,7 @@
 jupyter:
   title: "Jupyter (Python, R)"
-  iconUrl: "/assets/images/workspace-logos/Jupyter.svg"
-  start: [ "/var/opt/workspaces/jupyter-standardbase/start" ]
+  iconUrl: "https://raw.github.com/cerebrotech/workspace-configs/master/workspace-logos/Jupyter.svg?sanitize=true"
+  start: [ "/var/opt/workspaces/jupyter/start" ]
   httpProxy:
     port: 8888
     rewrite: false
