@@ -1,20 +1,19 @@
 
 RUN \
- wget http://mirror.reverse.net/pub/apache/zeppelin/zeppelin-0.7.3/zeppelin-0.7.3-bin-all.tgz
+ wget http://mirror.reverse.net/pub/apache/zeppelin/zeppelin-0.7.3/zeppelin-0.7.3-bin-all.tgz &&\
  
-RUN \
  tar xvzf zeppelin-0.7.3-bin-all.tgz &&\
  rm -rf /opt/zeppelin && \
  mv zeppelin-0.7.3-bin-all /opt/zeppelin && \
  rm zeppelin-0.7.3-bin-all.tgz && \
  chown -R ubuntu:ubuntu /opt/zeppelin
   
-ADD https://raw.githubusercontent.com/pmazenett/dominofiles/master/zeppelin-env.txt /opt/zeppelin/conf/zeppelin-env.sh
-RUN chmod 755 /opt/zeppelin/conf/zeppelin-env.sh
-RUN chown ubuntu:ubuntu /opt/zeppelin/conf/zeppelin-env.sh
-RUN sed -i '94d' /opt/zeppelin/conf/zeppelin-env.sh
-#RUN echo 'export SPARK_HOME=/opt/spark-2.2.1-bin-hadoop2.7' >> /opt/zeppelin/conf/zeppelin-env.sh
-RUN echo '#export ZEPPELIN_JAVA_OPTS="-Dspark.executor.memory=24g"' >> /opt/zeppelin/conf/zeppelin-env.sh
+RUN mv  /var/opt/workspaces/jupyter-standardbase/zeppelin-env.txt /opt/zeppelin/conf/zeppelin-env.sh &&\
+ chmod 755 /opt/zeppelin/conf/zeppelin-env.sh &&\
+ chown ubuntu:ubuntu /opt/zeppelin/conf/zeppelin-env.sh &&\
+ sed -i '94d' /opt/zeppelin/conf/zeppelin-env.sh &&\
+# echo 'export SPARK_HOME=/opt/spark-2.2.1-bin-hadoop2.7' >> /opt/zeppelin/conf/zeppelin-env.sh &&\
+ echo '#export ZEPPELIN_JAVA_OPTS="-Dspark.executor.memory=24g"' >> /opt/zeppelin/conf/zeppelin-env.sh 
 #RUN echo 'export SPARK_SUBMIT_OPTIONS="--jars /tmp/pilot-spark/usr-lib/hadoop-lzo/lib/hadoop-lzo-0.4.19.jar,/tmp/pilot-spark/usr-lib/hadoop-lzo/lib/hadoop-lzo.jar"' >> /opt/zeppelin/conf/zeppelin-env.sh
 
 
