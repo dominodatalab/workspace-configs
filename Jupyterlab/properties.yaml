@@ -1,7 +1,7 @@
-
-    jupyterlab:
+jupyterlab:
     title: "JupyterLab"
-    start: [  /var/opt/workspaces/jupyterlab/start.sh ]
+    iconUrl: "https://raw.githubusercontent.com/cerebrotech/workspace-configs/master/workspace-logos/jupyterlab.svg?sanitize=true"
+    start: [  /var/opt/workspaces/Jupyterlab/start.sh ]
     httpProxy:
         internalPath: /{{ownerUsername}}/{{projectName}}/{{sessionPathComponent}}/{{runId}}
         port: 8888
