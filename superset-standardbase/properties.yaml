@@ -1,7 +1,6 @@
-
-
 superset:
   title: "Superset"
+  iconUrl: "https://github.com/ChuckRIHead/cerebrotech/workspace-configs/master/workspace-logos/Superset.png?raw=true"
   start: [ "/var/opt/workspaces/superset-standardbase/start.sh" ]
   httpProxy:
     port: 8088
