@@ -1,6 +1,6 @@
 rstudio:
   title: "RStudio"
-  iconUrl: "/assets/images/workspace-logos/Rstudio.svg"
+  iconUrl: "https://raw.github.com/cerebrotech/workspace-configs/master/workspace-logos//Rstudio.svg?sanitize=true"
   start: [ "/var/opt/workspaces/rstudio/start" ]
   httpProxy:
     port: 8888
