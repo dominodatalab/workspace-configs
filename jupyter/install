@@ -2,7 +2,7 @@
 set -o nounset -o errexit -o pipefail
 
 #install Jupyter
-pip3 install jsonschema ipython[all]
+pip install jsonschema ipython[all]
 
 
 
