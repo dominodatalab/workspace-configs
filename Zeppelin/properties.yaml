@@ -1,6 +1,6 @@
-rstudio:
+Zeppelin:
   title: "Zeppelin"
-  #iconUrl: ""
+  iconUrl: "https://raw.github.com/cerebrotech/workspace-configs/2018q2/workspace-logos/Zeppelin.svg?sanitize=true"
   start: [ "/var/opt/workspaces/Zeppelin/start" ]
   httpProxy:
     port: 8888
