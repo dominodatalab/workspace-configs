@@ -1,6 +1,6 @@
 h20Flow:
     title: "H2O Flow"
-    iconUrl: "https://raw.githubusercontent.com/cerebrotech/workspace-configs/master/workspace-logos/H2O.svg?sanitize=true"
+    iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/master/workspace-logos/H2O.svg?sanitize=true"
     start: [ "/var/opt/workspaces/h2o/start" ]
     httpProxy:
         port: 8888
