@@ -1,6 +1,6 @@
 Zeppelin:
   title: "Zeppelin"
-  iconUrl: "https://raw.github.com/cerebrotech/workspace-configs/master/workspace-logos/Zeppelin.svg?sanitize=true"
+  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/master/workspace-logos/Zeppelin.svg?sanitize=true"
   start: [ "/var/opt/workspaces/Zeppelin/start" ]
   httpProxy:
     port: 8888
