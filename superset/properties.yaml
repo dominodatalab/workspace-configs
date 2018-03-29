@@ -1,6 +1,6 @@
 superset:
   title: "Superset"
-  iconUrl: "https://raw.githubusercontent.com/cerebrotech/workspace-configs/master/workspace-logos/Superset.png"
+  iconUrl: "https://raw.githubusercontent.com/https://raw.github.com/dominodatalab/workspace-configs/master/workspace-logos//Rstudio.svg?sanitize=true/workspace-configs/master/workspace-logos/Superset.png"
   start: [ "/var/opt/workspaces/superset/start.sh" ]
   httpProxy:
     port: 8088
