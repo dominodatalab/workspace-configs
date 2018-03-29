@@ -9,11 +9,10 @@ export SUP_CSRF_ENABLED=True
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
-set -xeo pipefail
 
 export SUPERSET_HOME=$DOMINO_WORKING_DIR
 export SUP_META_DB_URI=sqlite:///$DOMINO_WORKING_DIR/superset.db
-env
+
 
 # check to see if the superset config already exists, if it does skip to
 # running the user supplied docker-entrypoint.sh, note that this means
