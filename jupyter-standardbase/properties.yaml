@@ -1,6 +1,6 @@
 jupyter:
   title: "Jupyter (Python, R)"
-  iconUrl: "https://raw.github.com/cerebrotech/workspace-configs/master/workspace-logos/Jupyter.svg?sanitize=true"
+  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/master/workspace-logos/Jupyter.svg?sanitize=true"
   start: [ "/var/opt/workspaces/jupyter/start" ]
   httpProxy:
     port: 8888
