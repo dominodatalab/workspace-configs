@@ -1,9 +1,0 @@
-jupyter:
-  title: "Jupyter (Python, R)"
-  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/master/workspace-logos/Jupyter.svg?sanitize=true"
-  start: [ "/var/opt/workspaces/jupyter/start" ]
-  httpProxy:
-    port: 8888
-    rewrite: false
-    internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
-  supportedFileExtensions: [ ".ipynb" ]
