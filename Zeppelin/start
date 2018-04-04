@@ -1,14 +1,11 @@
 #!/bin/bash
 set -o nounset -o errexit
-
 ZEPPELIN_ROOT=/mnt/zeppelin
-
 export ZEPPELIN_PORT=8888
 export ZEPPELIN_NOTEBOOK_DIR=$ZEPPELIN_ROOT/notebooks;
 export ZEPPELIN_LOG_DIR=$ZEPPELIN_ROOT/log;
 if [ -z ${DOMINO_SPARK_CONFIG_MASTER+x} ]; then
-echo "DOMINO_SPARK_CONFIG_MASTER not set";
-  else export MASTER=$DOMINO_SPARK_CONFIG_MASTER
+   echo "DOMINO_SPARK_CONFIG_MASTER not set";
+else export MASTER=$DOMINO_SPARK_CONFIG_MASTER
 fi
-mkdir -p /opt/zeppelin/run
 /opt/zeppelin/bin/zeppelin.sh
