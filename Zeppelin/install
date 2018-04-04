@@ -8,7 +8,7 @@
  rm zeppelin-0.7.3-bin-all.tgz 
  chown -R ubuntu:ubuntu /opt/zeppelin
   
- mv  /var/opt/workspaces/jupyter-standardbase/zeppelin-env.txt /opt/zeppelin/conf/zeppelin-env.sh 
+ mv  /var/opt/workspaces/Zeppelin/zeppelin-env.txt /opt/zeppelin/conf/zeppelin-env.sh 
  chmod 755 /opt/zeppelin/conf/zeppelin-env.sh 
  chown ubuntu:ubuntu /opt/zeppelin/conf/zeppelin-env.sh 
  sed -i '94d' /opt/zeppelin/conf/zeppelin-env.sh 
