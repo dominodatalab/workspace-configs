@@ -10,5 +10,5 @@ if [ -z ${DOMINO_SPARK_CONFIG_MASTER+x} ]; then
 echo "DOMINO_SPARK_CONFIG_MASTER not set";
   else export MASTER=$DOMINO_SPARK_CONFIG_MASTER
 fi
-
+mkdir -p /opt/zeppelin/run
 /opt/zeppelin/bin/zeppelin.sh
