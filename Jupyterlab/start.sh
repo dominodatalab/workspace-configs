@@ -14,7 +14,7 @@ c.NotebookApp.base_url = '${PREFIX}'
 c.NotebookApp.base_kernel_url = '${PREFIX}'
 c.NotebookApp.base_project_url = '${PREFIX}'
 c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}, 'static_url_prefix': '${PREFIX}static/'}
-c.NotebookApp.default_url = '/lab/mnt'
+c.NotebookApp.default_url = '/lab/tree/mnt'
 c.NotebookApp.token = u''
 EOF
                                                                                                                                     
