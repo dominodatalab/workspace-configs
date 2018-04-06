@@ -22,6 +22,9 @@ rm -f /home/ubuntu/.jupyter/jupyter_notebook_config.py
 ln -s /home/ubuntu/.ipython/profile_default/ipython_notebook_config.py /home/ubuntu/.jupyter/jupyter_notebook_config.py 
 chown -R ubuntu:ubuntu /home/ubuntu/.ipython/profile_default/ipython_notebook_config.py 
 chown -R ubuntu:ubuntu /home/ubuntu/.jupyter/jupyter_notebook_config.py
+mkdir -p /home/ubuntu/.jupyter/profile_default/static/custom/ 
+ echo "require(['base/js/namespace'], function(IPython) { IPython._target='_self'; });" >> /home/ubuntu/.jupyter/profile_default/static/custom/custom.js 
+ chown -R ubuntu:ubuntu /home/ubuntu/.jupyter
 
 # Disable the login for Jupyter
  mkdir -p /home/ubuntu/.jupyter 
