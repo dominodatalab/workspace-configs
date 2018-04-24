@@ -45,28 +45,25 @@ An optional directory containing any additional files that are required by the s
 
 For instance, configuration files, or templates for generating configuration files.
 
-Usage
-Add to the Docker image a private key with read-only access to the workspaces git repository. E.g.:
+# Usage
 
-RUN mkdir -p $HOME/.ssh
-RUN ssh-keyscan github.com >> $HOME/.ssh/known_hosts
-RUN echo "...(Base64-encoded key)..." | base64 -d >$HOME/.ssh/workspaces-deploy-key
-RUN chmod 0400 $HOME/.ssh/*
-Clone the workspaces git repository, with the desired release tag:
+Following is an example to install a pluggable notebook in your base image - 
 
-RUN ssh-agent bash -c "ssh-add $HOME/.ssh/workspaces-deploy-key; git clone --branch 2017-10-24 git@github.com:cerebrotech/workspaces.git /var/opt/workspaces"
-In the "Properties for Notebooks" field, make reference to the full pathname of the scripts from the workspaces repository:
+Add to dockerfile instructions in Domino compute environments - 
+####Install Jupyter from workspaces
+RUN chmod +x /var/opt/workspaces/jupyter/install
+RUN /var/opt/workspaces/jupyter/install
+
+Add to Pluggable notebook properties in Domino compute environments - 
 
 jupyter:
-    title: "Jupyter (Python, R, Julia)"
-    start: [ "/var/opt/workspaces/jupyter/start" ]
-    httpProxy:
-        port: 8888
-        internalPath: /{{ownerUsername}}/{{projectName}}/{{sessionPathComponent}}/{{runId}}/
-        rewrite: false
-Good practices
-Bash options
-Start Bash scripts with these lines:
+  title: "Jupyter (Python, R, Julia)"
+  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/Jupyter.svg?sanitize=true"
+  start: [ "/var/opt/workspaces/jupyter/start" ]
+  httpProxy:
+    port: 8888
+    rewrite: false
+    internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
+  supportedFileExtensions: [ ".ipynb" ]
 
-#!/bin/bash
-set -o nounset -o errexit -o pipefail
+
