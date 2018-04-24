@@ -57,6 +57,7 @@ RUN /var/opt/workspaces/jupyter/install
 ```
 
 Add to Pluggable notebook properties in Domino compute environments - 
+You can find the properties in properties.yaml file. (check the notebook folder for corresponding properties)
 
 ```
 jupyter:
