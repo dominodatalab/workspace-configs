@@ -50,12 +50,15 @@ For instance, configuration files, or templates for generating configuration fil
 Following is an example to install a pluggable notebook in your base image - 
 
 Add to dockerfile instructions in Domino compute environments - 
+```
 ####Install Jupyter from workspaces
 RUN chmod +x /var/opt/workspaces/jupyter/install
 RUN /var/opt/workspaces/jupyter/install
+```
 
 Add to Pluggable notebook properties in Domino compute environments - 
 
+```
 jupyter:
   title: "Jupyter (Python, R, Julia)"
   iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/Jupyter.svg?sanitize=true"
@@ -65,5 +68,5 @@ jupyter:
     rewrite: false
     internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
   supportedFileExtensions: [ ".ipynb" ]
-
+```
 
