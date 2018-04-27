@@ -46,6 +46,20 @@ An optional directory containing any additional files that are required by the s
 For instance, configuration files, or templates for generating configuration files.
 
 # Usage
+In your docker file, you are going to want to download this repo and then use the install scripts for the notebooks you'd like to use. 
+```
+#Clone in workspaces install scripts
+RUN mkdir /var/opt/workspaces
+
+#note: Make sure you are using the latest release if you'd like the latest version of the workspaces
+#https://github.com/dominodatalab/workspace-configs/releases
+RUN  cd /tmp && wget https://github.com/dominodatalab/workspace-configs/archive/2018q2-v1.4.zip && unzip 2018q2-v1.4.zip  && cp -Rf workspace-configs-2018q2-v1.4/. /var/opt/workspaces && \
+rm -rf /var/opt/workspaces/workspace-logos && rm -rf /tmp/workspace-configs- 2018q2-v1.4
+
+```
+
+
+
 
 Following is an example to install a pluggable notebook in your base image - 
 
