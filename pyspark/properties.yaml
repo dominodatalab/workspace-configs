@@ -1,0 +1,8 @@
+pyspark:
+  title: "PySpark"
+  start: [ "/var/opt/workspaces/pyspark/start" ]
+  httpProxy:
+    port: 8888
+    rewrite: false
+    internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
+  supportedFileExtensions: [ ".ipynb" ]
