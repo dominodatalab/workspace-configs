@@ -1,2 +1,4 @@
 #!/bin/bash
-pip install jupyter-tensorboard
+###jupyter should already be installed for this to work. ipython should be v6+
+pip install jupyter-tensorboard --upgrade
+jupyter tensorboard enable --system
