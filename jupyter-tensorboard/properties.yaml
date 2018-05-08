@@ -1,4 +1,4 @@
-jupyter:
+jupyter-tensorboard:
   title: "Jupyter (Python, R, Julia)"
   iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/tensorboard.png?sanitize=true"
   start: [ "/var/opt/workspaces/jupyter-tensorboard/start" ]
