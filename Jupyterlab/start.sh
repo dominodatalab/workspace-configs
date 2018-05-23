@@ -11,8 +11,6 @@ cat >> $CONF_FILE << EOF
 c = get_config()
 c.NotebookApp.notebook_dir = '${DRT_WORKING_DIR:-"/"}'
 c.NotebookApp.base_url = '${PREFIX}'
-c.NotebookApp.base_kernel_url = '${PREFIX}'
-c.NotebookApp.base_project_url = '${PREFIX}'
 c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}, 'static_url_prefix': '${PREFIX}static/'}
 c.NotebookApp.default_url = '/lab/tree${DOMINO_WORKING_DIR}'
 c.NotebookApp.token = u''
