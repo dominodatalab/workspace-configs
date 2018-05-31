@@ -1,0 +1,25 @@
+#!/bin/bash
+set -o nounset -o errexit -o pipefail
+ 
+IP_ADDR=$(/sbin/ifconfig eth0 | grep "inet addr" | cut -d ":" -f2 | cut -d " " -f1)
+CONF_DIR="$HOME/.ipython/profile_default"
+CONF_FILE="${CONF_DIR}/ipython_notebook_config.py"
+PREFIX=/${DOMINO_PROJECT_OWNER}/${DOMINO_PROJECT_NAME}/notebookSession/${DOMINO_RUN_ID}/
+MAIN_PROJECT_REDIRECT_DIR=${DOMINO_WORKING_DIR#"/mnt"}
+ 
+mkdir -p "${CONF_DIR}"
+ 
+cat <<EOF >>"${CONF_FILE}"
+c = get_config()
+c.NotebookApp.notebook_dir = '${DRT_WORKING_DIR:-"/mnt"}'
+c.NotebookApp.base_url = '${PREFIX}'
+c.NotebookApp.base_kernel_url = '${PREFIX}'
+c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}, 'static_url_prefix': '${PREFIX}static/'}
+c.NotebookApp.default_url = '/tree${MAIN_PROJECT_REDIRECT_DIR}'
+EOF
+ 
+# Replace * in "--ip=*" with the actual IP address of the container
+COMMAND='ipython notebook --no-browser --ip=* 2>&1'
+FINAL_COMMAND=$(echo "${COMMAND}" | sed "s/--ip=\\*/--ip=${IP_ADDR}/")
+ 
+eval ${FINAL_COMMAND}
