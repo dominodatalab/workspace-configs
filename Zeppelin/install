@@ -1,4 +1,4 @@
- wget http://mirror.reverse.net/pub/apache/zeppelin/zeppelin-0.7.3/zeppelin-0.7.3-bin-all.tgz && \
+ wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.3/zeppelin-0.7.3-bin-all.tgz && \
  tar xvzf zeppelin-0.7.3-bin-all.tgz 
  rm -rf /opt/zeppelin 
  mv zeppelin-0.7.3-bin-all /opt/zeppelin 
