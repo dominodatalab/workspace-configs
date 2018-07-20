@@ -1,10 +1,50 @@
 # workspace-configs
 
-Domino workspace definitions.
+# Usage
 
-DO NOT ADD SECRETS TO THIS REPOSITORY
 
-Structure
+In your docker file, you are going to want to download this repo and then use the install scripts for the notebooks you'd like to use. Make sure you using the latest tag/release (e.g. v1.10 in the example). Do not use the develop branch. 
+```
+#Clone in workspaces install scripts
+RUN mkdir /var/opt/workspaces
+
+#note: Make sure you are using the latest release if you'd like the latest version of the workspaces
+#https://github.com/dominodatalab/workspace-configs/releases
+RUN  cd /tmp && wget https://github.com/dominodatalab/workspace-configs/archive/2018q2-v1.10.zip && unzip 2018q2-v1.10.zip  && cp -Rf workspace-configs-2018q2-v1.10/. /var/opt/workspaces && \
+rm -rf /var/opt/workspaces/workspace-logos && rm -rf /tmp/workspace-configs- 2018q2-v1.10
+
+```
+
+
+
+
+Following is an example to install a pluggable notebook in your base image - 
+
+Add to dockerfile instructions in Domino compute environments - 
+```
+####Install Jupyter from workspaces
+RUN chmod +x /var/opt/workspaces/jupyter/install
+RUN /var/opt/workspaces/jupyter/install
+```
+
+Add to Pluggable notebook properties in Domino compute environments - 
+You can find the properties in properties.yaml file. (check the notebook folder for corresponding properties)
+
+```
+jupyter:
+  title: "Jupyter (Python, R, Julia)"
+  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/Jupyter.svg?sanitize=true"
+  start: [ "/var/opt/workspaces/jupyter/start" ]
+  httpProxy:
+    port: 8888
+    rewrite: false
+    internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
+  supportedFileExtensions: [ ".ipynb" ]
+```
+
+
+
+# Structure
 Create a directory for each workspace application -- e.g. jupyter, rstudio.
 
 In that directory, create these files:
@@ -45,43 +85,4 @@ An optional directory containing any additional files that are required by the s
 
 For instance, configuration files, or templates for generating configuration files.
 
-# Usage
-In your docker file, you are going to want to download this repo and then use the install scripts for the notebooks you'd like to use. 
-```
-#Clone in workspaces install scripts
-RUN mkdir /var/opt/workspaces
-
-#note: Make sure you are using the latest release if you'd like the latest version of the workspaces
-#https://github.com/dominodatalab/workspace-configs/releases
-RUN  cd /tmp && wget https://github.com/dominodatalab/workspace-configs/archive/2018q2-v1.4.zip && unzip 2018q2-v1.4.zip  && cp -Rf workspace-configs-2018q2-v1.4/. /var/opt/workspaces && \
-rm -rf /var/opt/workspaces/workspace-logos && rm -rf /tmp/workspace-configs- 2018q2-v1.4
-
-```
-
-
-
-
-Following is an example to install a pluggable notebook in your base image - 
-
-Add to dockerfile instructions in Domino compute environments - 
-```
-####Install Jupyter from workspaces
-RUN chmod +x /var/opt/workspaces/jupyter/install
-RUN /var/opt/workspaces/jupyter/install
-```
-
-Add to Pluggable notebook properties in Domino compute environments - 
-You can find the properties in properties.yaml file. (check the notebook folder for corresponding properties)
-
-```
-jupyter:
-  title: "Jupyter (Python, R, Julia)"
-  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/Jupyter.svg?sanitize=true"
-  start: [ "/var/opt/workspaces/jupyter/start" ]
-  httpProxy:
-    port: 8888
-    rewrite: false
-    internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
-  supportedFileExtensions: [ ".ipynb" ]
-```
 
