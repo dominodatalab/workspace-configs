@@ -2,7 +2,7 @@
 
 # Install Spark 2.2.1
 rm -rf /opt/spark-*
-wget http://apache.claz.org/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz
+wget https://archive.apache.org/dist/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz 
 tar xvzf spark-2.2.1-bin-hadoop2.7.tgz
 mv spark-2.2.1-bin-hadoop2.7 /opt
 rm spark-2.2.1-bin-hadoop2.7.tgz
@@ -26,4 +26,5 @@ echo 'export PATH=${PATH:-}:${HADOOP_HOME:-}/bin' >> /home/ubuntu/.domino-defaul
 
 # Make directories needed for the start script
 mkdir -p /usr/local/hadoop/etc/hadoop
-mkdir -p /var/opt/workspaces/pyspark
+chmod +x /var/opt/workspaces/pyspark/start
+
