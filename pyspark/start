@@ -1,21 +1,23 @@
+#Note: this should be the same as your Jupyter start script. Duplicated here for clarity. 
+
+
 #!/bin/bash
 set -o nounset -o errexit -o pipefail
- 
+
 IP_ADDR=$(/sbin/ifconfig eth0 | grep "inet addr" | cut -d ":" -f2 | cut -d " " -f1)
-CONF_DIR="$HOME/.ipython/profile_default"
-CONF_FILE="${CONF_DIR}/ipython_notebook_config.py"
- 
+CONF_DIR="$HOME/.jupyter"
+CONF_FILE="${CONF_DIR}/jupyter_notebook_config.py"
+
 mkdir -p "${CONF_DIR}"
- 
+
 cat <<EOF >>"${CONF_FILE}"
-c = get_config()
-c.NotebookApp.notebook_dir = '${DRT_WORKING_DIR:-"/"}'
+c.NotebookApp.notebook_dir = '/'
 c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}}
-c.NotebookApp.default_url = '/tree${DOMINO_WORKING_DIR}'
+c.NotebookApp.default_url = 'tree${DOMINO_WORKING_DIR}'
+#disable quit button in Jupyter 5.5+
+c.NotebookApp.quit_button = False 
 EOF
- 
+
 # Replace * in "--ip=*" with the actual IP address of the container
-COMMAND='PYSPARK_DRIVER_PYTHON="ipython" PYSPARK_DRIVER_PYTHON_OPTS="notebook --ip=* " pyspark  2>&1'
+COMMAND='jupyter notebook --no-browser --ip=* 2>&1'
 FINAL_COMMAND=$(echo "${COMMAND}" | sed "s/--ip=\\*/--ip=${IP_ADDR}/")
- 
-eval ${FINAL_COMMAND}
