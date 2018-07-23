@@ -3,15 +3,15 @@
 # Usage
 
 
-In your docker file, you are going to want to download this repo and then use the install scripts for the notebooks you'd like to use. Make sure you using the latest tag/release (e.g. v1.10 in the example). Do not use the develop branch. 
+In your docker file, you are going to want to download this repo and then use the install scripts for the notebooks you'd like to use. Make sure you using the latest tag/release (e.g. v1.11 in the example). Do not use the develop branch. 
 ```
 #Clone in workspaces install scripts
 RUN mkdir /var/opt/workspaces
 
 #note: Make sure you are using the latest release if you'd like the latest version of the workspaces
 #https://github.com/dominodatalab/workspace-configs/releases
-RUN  cd /tmp && wget https://github.com/dominodatalab/workspace-configs/archive/2018q2-v1.10.zip && unzip 2018q2-v1.10.zip  && cp -Rf workspace-configs-2018q2-v1.10/. /var/opt/workspaces && \
-rm -rf /var/opt/workspaces/workspace-logos && rm -rf /tmp/workspace-configs- 2018q2-v1.10
+RUN  cd /tmp && wget https://github.com/dominodatalab/workspace-configs/archive/2018q2-v1.11.zip && unzip 2018q2-v1.11.zip  && cp -Rf workspace-configs-2018q2-v1.11/. /var/opt/workspaces && \
+rm -rf /var/opt/workspaces/workspace-logos && rm -rf /tmp/workspace-configs- 2018q2-v1.11
 
 ```
 
