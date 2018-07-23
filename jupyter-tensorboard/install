@@ -1,4 +1,5 @@
-#!/bin/bash
-###jupyter should already be installed for this to work. ipython should be v6+
+
+#If using this script without first using the Jupyter install script, please ensure that you add in here the jupyter_notebook_config.py edits from the Jupyter install script. 
+
 pip install jupyter-tensorboard --upgrade
-jupyter tensorboard enable --system
+ jupyter tensorboard enable --system
