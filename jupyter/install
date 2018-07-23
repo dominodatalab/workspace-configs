@@ -6,7 +6,7 @@ pip install jsonschema jupyter
 
 # # #   # CONFIGURE Jupyter
  mkdir -p /home/ubuntu/.jupyter
- echo 'c = get_config()' > /home/ubuntu/.jupyter/jupyter_notebook_config.py
+ echo 'cf = get_config()' > /home/ubuntu/.jupyter/jupyter_notebook_config.py
 
 # # The default cell execution timeout in nbconvert is 30 seconds, set it to a year
 # echo '# The default cell execution timeout in nbconvert is 30 seconds, set it to a year' >> /home/ubuntu/.jupyter/jupyter_notebook_config.py
