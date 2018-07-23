@@ -25,7 +25,7 @@ pip install jsonschema jupyter
 #  mkdir -p /home/ubuntu/.jupyter 
 #  printf "\nc.NotebookApp.token = u'' \n\n" >> /home/ubuntu/.jupyter/jupyter_notebook_config.py 
  
-#  chown -R ubuntu:ubuntu /home/ubuntu/.jupyter
+  chown -R ubuntu:ubuntu /home/ubuntu/.jupyter
 
 
 ##### Deprecated but maintaining in order to maintain backwards compatibility with ipython #####
