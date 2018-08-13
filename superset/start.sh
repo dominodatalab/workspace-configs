@@ -68,16 +68,21 @@ export SUP_META_DB_URI=sqlite:///$DOMINO_WORKING_DIR/superset.db
 
 ###########
 # Create an admin user (you will be prompted to set username, first and last name before setting a password)
+echo "fabmanager create-admin"
 fabmanager create-admin --app superset
 
 # Initialize the database
+echo "superset db upgrade"
 superset db upgrade
 
 # Load some data to play with
+echo "superset load examples"
 superset load_examples
 
 # Create default roles and permissions
+echo "superset init"
 superset init
 
 # To start a development web server on port 8088, use -p to bind to another port
+echo "superset runserver"
 superset runserver -d
