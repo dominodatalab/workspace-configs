@@ -31,6 +31,7 @@ SUPERSET_WEBSERVER_TIMEOUT = 60
 SECRET_KEY = '${SUP_SECRET_KEY}'
 SQLALCHEMY_DATABASE_URI = '${SUP_META_DB_URI}'
 CSRF_ENABLED = ${SUP_CSRF_ENABLED}
+HTTP_HEADERS = {}
 
 # https://stackoverflow.com/questions/48966344/assign-anonymoususermixin-to-a-real-user
 AUTH_TYPE = 3
