@@ -55,8 +55,8 @@ if [ ! -f $SUPERSET_HOME/.setup-complete ]; then
   echo "Initializing database"
   superset db upgrade
   
-  echo "Loading examples"
-  superset load_examples
+#   echo "Loading examples"
+#   superset load_examples
 
   echo "Creating default roles and permissions"
   superset init
