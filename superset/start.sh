@@ -50,7 +50,7 @@ fi
 if [ ! -f $SUPERSET_HOME/.setup-complete ]; then
 
   echo "Running first time setup for Superset"
-  /usr/local/bin/fabmanager create-admin --app superset --username admin --password superset --firstname Admin --lastname Superset --email superset+admin@example.com
+  fabmanager create-admin --app superset --username admin --password superset --firstname Admin --lastname Superset --email superset+admin@example.com
   
   echo "Initializing database"
   superset db upgrade
