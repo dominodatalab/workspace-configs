@@ -68,7 +68,7 @@ else
 fi
 
 echo "Starting up Superset"
-superset runserver -d # -a 0.0.0.0
+superset runserver -a 0.0.0.0
 
 # ###########
 # # Create an admin user (you will be prompted to set username, first and last name before setting a password)
