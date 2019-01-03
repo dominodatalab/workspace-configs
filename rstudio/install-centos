@@ -2,21 +2,14 @@
 set -o nounset -o errexit -o pipefail
 
 
- mkdir /tmp/rstudio-temp
- cd /tmp/rstudio-temp
- apt-get install -y gdebi-core libapparmor1
- wget -q https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb
- gdebi -n rstudio-server-1.1.463-amd64.deb
+ yum install -y -q https://download2.rstudio.org/rstudio-server-rhel-1.1.383-x86_64.rpm
+
 
  ln -s /usr/lib/rstudio-server /usr/local/lib/rstudio-server 
  chown -R root:root /usr/lib/rstudio-server
- cd ~
-rm -rf /tmp/rstudio-temp
-
-
 
  echo "www-frame-origin=any" >> /etc/rstudio/rserver.conf
-chown ubuntu:ubuntu /etc/rstudio/rserver.conf
+chown domino:domino /etc/rstudio/rserver.conf
 
 #Make rmarkdown::render work outside of rstudio. https://github.com/rstudio/rmarkdown/blob/master/PANDOC.md
 ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc /usr/local/bin
