@@ -3,17 +3,17 @@ set -o nounset -o errexit -o pipefail
 
 #Configure Spark if present
 if [ -n "${SPARK_HOME:-}" ]; then
-  echo ".libPaths(c(file.path(Sys.getenv('SPARK_HOME'), 'R', 'lib'), .libPaths()))" >> ~/.Rprofile
+  echo ".libPaths(c(file.path(Sys.getenv('SPARK_HOME'), 'R', 'lib'), .libPaths()))" >> /"${DOMINO_USER_NAME}"/.Rprofile
 fi
 
 # Set environment variable for where the history file will be stored
 export R_HISTFILE='domino.Rhistory'
 
-printenv >> ~/.Renviron
+printenv >> /"${DOMINO_USER_NAME}"/.Renviron
 
 # Set initial working directory, which is the diretory RStudio opens up to
-mkdir -p ~/.rstudio/monitored/user-settings/
-echo -e "initialWorkingDirectory=\"${DRT_WORKING_DIR:-"${DOMINO_WORKING_DIR}"}\"\n" >> ~/.rstudio/monitored/user-settings/user-settings
+mkdir -p /"${DOMINO_USER_NAME}"/.rstudio/monitored/user-settings/
+echo -e "initialWorkingDirectory=\"${DRT_WORKING_DIR:-"${DOMINO_WORKING_DIR}"}\"\n" >> /"${DOMINO_USER_NAME}"/.rstudio/monitored/user-settings/user-settings
 
 
 
