@@ -2,7 +2,7 @@
 set -o nounset -o errexit -o pipefail
 
 IP_ADDR=$(/sbin/ifconfig eth0 | grep "inet addr" | cut -d ":" -f2 | cut -d " " -f1)
-CONF_DIR="$HOME/.jupyter"
+CONF_DIR="${DOMINO_USER_NAME}/.jupyter"
 CONF_FILE="${CONF_DIR}/jupyter_notebook_config.py"
 
 mkdir -p "${CONF_DIR}"
