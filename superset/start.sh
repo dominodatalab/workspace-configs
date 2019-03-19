@@ -45,6 +45,10 @@ ADDITIONAL_MIDDLEWARE = [PredefinedUserMiddleware]
  
 EOF
 fi
+
+sed -i '/^SQLALCHEMY_DATABASE_URI/d' superset_config.py 
+echo "SQLALCHEMY_DATABASE_URI = '$DOMINO_WORKING_DIR'" >> $DOMINO_WORKING_DIR/superset_config.py  
+ 
  
 # set up Superset if we haven't already
 if [ ! -f $SUPERSET_HOME/.setup-complete ]; then
