@@ -2,7 +2,7 @@
 set -o nounset -o errexit -o pipefail
 
 #install Jupyter
-pip install jsonschema ipython
+pip install jsonschema ipython==5
 
 # # #   # CONFIGURE Jupyter
  mkdir -p /home/domino/.jupyter
