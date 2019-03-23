@@ -2,7 +2,6 @@
 set -o nounset -o errexit -o pipefail
 
 #install Jupyter
-pip uninstall ipython
 pip install jsonschema ipython==5.7 ipykernel==4.10
 
 # # #   # CONFIGURE Jupyter
