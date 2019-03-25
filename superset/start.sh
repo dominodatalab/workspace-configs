@@ -26,7 +26,7 @@ if [ ! -f $SUPERSET_HOME/superset_config.py ]; then
   cat > $SUPERSET_HOME/superset_config.py <<EOF
 ROW_LIMIT = ${SUP_ROW_LIMIT}
 WEBSERVER_THREADS = 4
-SUPERSET_WEBSERVER_PORT = 8088
+SUPERSET_WEBSERVER_PORT = 8888
 SUPERSET_WEBSERVER_TIMEOUT = 60
 SECRET_KEY = '${SUP_SECRET_KEY}'
 SQLALCHEMY_DATABASE_URI = '${SUP_META_DB_URI}'
@@ -73,7 +73,7 @@ else
 fi
  
 echo "Starting up Superset"
-gunicorn -b 0.0.0.0 superset:app
+gunicorn -b 0.0.0.0:8888 superset:app
  
 ###########
 # # Create an admin user (you will be prompted to set username, first and last name before setting a password)
