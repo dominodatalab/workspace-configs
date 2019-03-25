@@ -73,7 +73,7 @@ else
 fi
  
 echo "Starting up Superset"
-gunicorn -b 0.0.0.0:8888
+gunicorn -b 0.0.0.0:8888 superset:app
  
 ###########
 # # Create an admin user (you will be prompted to set username, first and last name before setting a password)
