@@ -4,6 +4,9 @@ set -o nounset -o errexit -o pipefail
 #install Jupyter
 pip install jsonschema  ipykernel==4.10 ipython==5.7
 
+pip install jupyter
+pip install prompt-toolkit==1.0.15 --force-reinstall
+
 # # #   # CONFIGURE Jupyter
  mkdir -p /home/domino/.jupyter
  echo 'c = get_config()' > /home/domino/.jupyter/jupyter_notebook_config.py
