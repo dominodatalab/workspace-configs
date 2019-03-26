@@ -3,7 +3,14 @@
 export SUP_ROW_LIMIT=5000 
 export SUP_SECRET_KEY='thisismysecretkey' 
 export SUP_CSRF_ENABLED=True
- 
+
+## Add gunicorn arguments
+export GUNICORN_BIND=0.0.0.0:8088
+export GUNICORN_LIMIT_REQUEST_FIELD_SIZE=0
+export GUNICORN_LIMIT_REQUEST_LINE=0
+export GUNICORN_TIMEOUT=60
+export GUNICORN_WORKERS=2
+export GUNICORN_CMD_ARGS="--workers ${GUNICORN_WORKERS} --timeout ${GUNICORN_TIMEOUT} --bind ${GUNICORN_BIND} --limit-request-line ${GUNICORN_LIMIT_REQUEST_LINE} --limit-request-field_size ${GUNICORN_LIMIT_REQUEST_FIELD_SIZE}" 
  
  
 export LC_ALL=C.UTF-8
@@ -72,7 +79,7 @@ else
 fi
  
 echo "Starting up Superset"
-gunicorn -b  0.0.0.0:8888 superset:app
+gunicorn superset:app
  
 ###########
 # # Create an admin user (you will be prompted to set username, first and last name before setting a password)
