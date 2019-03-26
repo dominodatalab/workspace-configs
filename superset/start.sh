@@ -1,4 +1,4 @@
-#!/bin/bash
+###!/bin/bash
 # Superset setup options
 #export SUP_ROW_LIMIT=5000 
 #export SUP_SECRET_KEY='thisismysecretkey' 
