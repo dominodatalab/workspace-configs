@@ -1,5 +1,5 @@
 #!/bin/bash
-Superset setup options
+#Superset setup options
 export SUP_ROW_LIMIT=5000 
 export SUP_SECRET_KEY='thisismysecretkey' 
 export SUP_CSRF_ENABLED=True
@@ -74,4 +74,3 @@ fi
  
 echo "Starting up Superset"
 gunicorn superset:app
-
