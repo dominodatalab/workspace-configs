@@ -2,7 +2,7 @@ export SUPERSET_VERSION=0.28.1
      apt-get update 
      apt-get install -y build-essential gcc libssl-dev libffi-dev libsasl2-dev libldap2-dev 
      pip install --no-cache-dir psycopg2-binary sqlalchemy-redshift flask-appbuilder==1.12.1 
-     apt-get remove -y build-essential libssl-dev libffi-dev libsasl2-dev libldap2-dev 
+     apt-get remove -y build-essential libssl-dev libffi-dev libldap2-dev 
      apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
  # install DB packages separately
  
@@ -17,7 +17,7 @@ export SUPERSET_VERSION=0.28.1
      dpkg -i mysql-connector-python-py3_2.1.8-1ubuntu18.04_all.deb 
      apt-get update 
      apt-get install -y libmysqlclient-dev 
-     pip install mysqlclient oursql3
+     pip install mysqlclient
 
 # install ibm db2
     pip install ibm_db
