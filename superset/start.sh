@@ -16,7 +16,7 @@ export LANG=C.UTF-8
  
 export SUPERSET_HOME=$DOMINO_WORKING_DIR
 export SUP_META_DB_URI=sqlite:///$DOMINO_WORKING_DIR/superset.db
-export PYTHONPATH=/home/ubuntu/:$DOMINO_WORKING_DIR:$PYTHONPATH
+export PYTHONPATH=$SUPERSET_HOME
 
 # check to see if the superset config already exists, if it does skip to
 # running the user supplied docker-entrypoint.sh, note that this means
