@@ -1,7 +1,7 @@
 pyspark:
   title: "PySpark"
   start: [ "/var/opt/workspaces/pyspark/start" ]
-  iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/PySpark.png?sanitize=true"
+  iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/PySpark.png"
   httpProxy:
     port: 8888
     rewrite: false
