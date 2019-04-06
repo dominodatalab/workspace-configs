@@ -10,7 +10,6 @@
         "@theia/extension-manager": "latest",
         "@theia/file-search": "latest",
         "@theia/filesystem": "latest",
-        "@theia/git": "latest",
         "@theia/go": "latest",
         "@theia/java": "latest",
         "@theia/json": "latest",
