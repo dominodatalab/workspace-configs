@@ -42,8 +42,6 @@
         "@theia/userstorage": "latest",
         "@theia/variable-resolver": "latest",
         "@theia/workspace": "latest",
-        "@theia/console": "^0.3.19",
-        "@theia/debug": "^0.3.19",
         "python-debug": "1.0.0"
         
     },
