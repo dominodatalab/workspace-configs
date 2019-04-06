@@ -44,7 +44,7 @@
         "@theia/workspace": "latest",
         "@theia/console": "latest",
         "@theia/debug": "latest",
-        "python-debug": "latest",
+        "python-debug": "latest"
     },
     "devDependencies": {
         "@theia/cli": "latest"
