@@ -1,2 +1,2 @@
 #!/bin/bash
-cd /home/ubuntu && yarn theia start /mnt --hostname 0.0.0.0 --port 8888
+cd /home/ubuntu && yarn theia start ${DOMINO_WORKING_DIR} --hostname 0.0.0.0 --port 8888
