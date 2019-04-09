@@ -1,7 +1,6 @@
 #!/bin/bash
 set -o nounset -o errexit -o pipefail
-
-IP_ADDR=$(/sbin/ifconfig eth0 | grep "inet addr" | cut -d ":" -f2 | cut -d " " -f1)
+IP_ADDR=$(/sbin/ifconfig eth0 | grep 'inet' | cut -d: -f2 | awk '{print $2}')
 CONF_DIR="$HOME/.jupyter"
 CONF_FILE="${CONF_DIR}/jupyter_notebook_config.py"
 
