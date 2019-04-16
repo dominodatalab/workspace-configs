@@ -1,4 +1,3 @@
-#https://github.com/theia-ide/theia-apps/blob/master/theia-python-docker/latest.package.json
 {
     "private": true,
     "dependencies": {
