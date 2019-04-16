@@ -42,6 +42,7 @@
         "@theia/userstorage": "latest",
         "@theia/variable-resolver": "latest",
         "@theia/workspace": "latest",
+        "@theia/getting-started": "latest",
          "python-debug": "latest"
     },
     "devDependencies": {
