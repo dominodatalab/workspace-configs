@@ -75,9 +75,6 @@ chmod g+rw /home && \
 
 export version=latest
 cd /home/ubuntu && curl https://raw.githubusercontent.com/dominodatalab/workspace-configs/Theia/theia/package.json -o package.json
-##Remove the git plug and add the python debugger
-#sed -i -e 's#"@theia/git": "latest"#"python-debug": "1.0.0"#g' /home/ubuntu/package.json
-#sed -i -e 's#"dependencies": {#"dependencies": {\n	        "@theia/console": "^0.3.19",\n	        "@theia/debug": "^0.3.19",\n	        "@theia/editor-preview": "^0.3.19",#g' /home/ubuntu/package.json
 
 #ARG GITHUB_TOKEN
 yarn --cache-folder ./ycache && rm -rf ./ycache
