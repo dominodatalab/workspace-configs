@@ -7,7 +7,6 @@
         "@theia/terminal": "latest",
         "@theia/outline-view": "latest",
         "@theia/preferences": "latest",
-        "@theia/git": "latest",
         "@theia/file-search": "latest",
         "@theia/markers": "latest",
         "@theia/textmate-grammars": "latest",
