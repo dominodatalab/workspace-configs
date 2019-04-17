@@ -64,13 +64,14 @@ set -ex \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
-#Install Theia
-pip install python-language-server flake8 autopep8
 
+pip install python-language-server
 chmod g+rw /home && \
   mkdir -p /home/project && \
   chown -R ubuntu:ubuntu /home/project;
 
+#Theia
+##Needed for node-gyp, nsfw build
 
 export version=latest
 cd /home/ubuntu && curl https://raw.githubusercontent.com/dominodatalab/workspace-configs/Theia/theia/package.json -o package.json
