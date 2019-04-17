@@ -65,7 +65,14 @@ set -ex \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
 
-pip install python-language-server
+pip install python-language-server \
+    flake8 \
+    autopep8 \
+    futures \
+    configparser
+
+
+
 chmod g+rw /home && \
   mkdir -p /home/project && \
   chown -R ubuntu:ubuntu /home/project;
