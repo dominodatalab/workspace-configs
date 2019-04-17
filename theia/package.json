@@ -41,6 +41,6 @@
         "@theia/workspace": "^0.3.19"
     },
     "devDependencies": {
-        "@theia/cli": "next"
+        "@theia/cli": "^0.3.19"
     }
 }
