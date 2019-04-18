@@ -7,7 +7,7 @@ export SUP_CSRF_ENABLED=True
 export GUNICORN_BIND=0.0.0.0:8090
 export GUNICORN_LIMIT_REQUEST_FIELD_SIZE=0
 export GUNICORN_LIMIT_REQUEST_LINE=0
-export GUNICORN_TIMEOUT=60
+export GUNICORN_TIMEOUT=120
 export GUNICORN_WORKERS=2
 export GUNICORN_CMD_ARGS="--log-level debug --access-logfile $DOMINO_WORKING_DIR/superset-access.log  --workers ${GUNICORN_WORKERS} --timeout ${GUNICORN_TIMEOUT} --bind ${GUNICORN_BIND} --limit-request-line ${GUNICORN_LIMIT_REQUEST_LINE} --limit-request-field_size ${GUNICORN_LIMIT_REQUEST_FIELD_SIZE}"
 
