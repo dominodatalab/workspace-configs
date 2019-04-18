@@ -12,6 +12,7 @@
         "@theia/file-search": "^0.3.19",
         "@theia/filesystem": "^0.3.19",
         "@theia/getting-started": "^0.3.19",
+        "@theia/git": "^0.3.19",
         "@theia/json": "^0.3.19",
         "@theia/keymaps": "^0.3.19",
         "@theia/languages": "^0.3.19",
