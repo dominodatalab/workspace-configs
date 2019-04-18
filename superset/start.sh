@@ -9,7 +9,7 @@ export GUNICORN_LIMIT_REQUEST_FIELD_SIZE=0
 export GUNICORN_LIMIT_REQUEST_LINE=0
 export GUNICORN_TIMEOUT=60
 export GUNICORN_WORKERS=2
-export GUNICORN_CMD_ARGS="--workers ${GUNICORN_WORKERS} --timeout ${GUNICORN_TIMEOUT} --bind ${GUNICORN_BIND} --limit-request-line ${GUNICORN_LIMIT_REQUEST_LINE} --limit-request-field_size ${GUNICORN_LIMIT_REQUEST_FIELD_SIZE}"
+export GUNICORN_CMD_ARGS="--log-level debug --access-logfile $DOMINO_WORKING_DIR/superset-access.log  --workers ${GUNICORN_WORKERS} --timeout ${GUNICORN_TIMEOUT} --bind ${GUNICORN_BIND} --limit-request-line ${GUNICORN_LIMIT_REQUEST_LINE} --limit-request-field_size ${GUNICORN_LIMIT_REQUEST_FIELD_SIZE}"
 
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
