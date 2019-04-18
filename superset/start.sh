@@ -38,7 +38,7 @@ CSRF_ENABLED = ${SUP_CSRF_ENABLED}
 HTTP_HEADERS = {}
 LOG_FORMAT = '%(asctime)s:%(levelname)s:%(name)s:%(message)s'
 LOG_LEVEL = 'DEBUG'
-FILENAME = os.path.join(DOMINO_WORKING_DIR, 'superset.log')
+
  
 # https://stackoverflow.com/questions/48966344/assign-anonymoususermixin-to-a-real-user
 AUTH_TYPE = 3
