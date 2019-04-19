@@ -12,8 +12,7 @@ cd /opt && \
 apt-get install -y bsdtar
 mkdir -p /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558 && \
 cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558
- curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2019.3.6558/vspackage | bsdtar -xvf - extension
-  mv extension /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558
+curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2019.3.6558/vspackage | bsdtar -xvf - extension
 
 mv /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558/extension /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558
 chown ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
