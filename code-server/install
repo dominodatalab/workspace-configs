@@ -12,16 +12,15 @@ cd /opt && \
 apt-get install -y bsdtar
 mkdir -p /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558 && \
 cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558
- curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2019.3.6558/vspackage | bsdtar -xvf - extension
-  mv extension /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558
-cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558/extension && \
-mv * ../
+curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2019.3.6558/vspackage | bsdtar -xvf - extension
+
+cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.3.6558/extension/ && mv * ../
 chown ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
 
 
 export PATH=/opt/code-server:$PATH
 
-#echo export PATH=/opt/code-server:$PATH >> /home/ubuntu/.domino-defaults
+echo export PATH=/opt/code-server:$PATH >> /home/ubuntu/.domino-defaults
 
 pip install git+git://github.com/ChuckRIHead/jupyter_codeserver_proxy-.git
 
