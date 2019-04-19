@@ -1,0 +1,2 @@
+#!/bin/bash
+code-server ${DOMINO_WORKING_DIR} --no-auth -p 8888 --disable-telemetry --allow-http 
