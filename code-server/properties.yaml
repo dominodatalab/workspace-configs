@@ -1,5 +1,6 @@
 code-server:
  title: "code-server"
+ iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/vscode.svg?sanitize=true"
  start: [ "/var/opt/workspaces/code-server/start" ]
  httpProxy:
     port: 8888
