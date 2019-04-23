@@ -23,5 +23,3 @@ export PATH=/opt/code-server:$PATH
 
 echo export PATH=/opt/code-server:$PATH >> /home/ubuntu/.domino-defaults
 
-pip install git+git://github.com/ChuckRIHead/jupyter_codeserver_proxy-.git
-
