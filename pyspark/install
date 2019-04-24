@@ -2,14 +2,14 @@
 
 # Install Spark 2.2.1
 rm -rf /opt/spark-*
-wget https://archive.apache.org/dist/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz 
+wget -q https://archive.apache.org/dist/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz 
 tar xvzf spark-2.2.1-bin-hadoop2.7.tgz
 mv spark-2.2.1-bin-hadoop2.7 /opt
 rm spark-2.2.1-bin-hadoop2.7.tgz
 chown -R ubuntu:ubuntu /opt/spark-2.2.1-bin-hadoop2.7
 
 # Install Hadoop 2.7.3
-wget https://archive.apache.org/dist/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+wget -q https://archive.apache.org/dist/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
 tar -xzf hadoop-2.7.3.tar.gz
 mv hadoop-2.7.3 /usr/local/hadoop
 

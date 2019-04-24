@@ -1,4 +1,4 @@
- wget http://apache.claz.org/zeppelin/zeppelin-0.8.0/zeppelin-0.8.0-bin-all.tgz && \
+ wget -q http://apache.claz.org/zeppelin/zeppelin-0.8.0/zeppelin-0.8.0-bin-all.tgz && \
  tar xvzf zeppelin-0.8.0-bin-all.tgz
  rm -rf /opt/zeppelin 
  mv zeppelin-0.8.0-bin-all /opt/zeppelin 

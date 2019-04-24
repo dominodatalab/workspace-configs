@@ -1,0 +1,36 @@
+#!/bin/bash
+set -o nounset -o errexit -o pipefail
+
+#install Jupyter
+pip install jsonschema  ipykernel==4.10 ipython==5.7
+
+pip install jupyter
+pip install prompt-toolkit==1.0.15 --force-reinstall
+
+# # #   # CONFIGURE Jupyter
+ mkdir -p /home/domino/.jupyter
+ echo 'c = get_config()' > /home/domino/.jupyter/jupyter_notebook_config.py
+
+# The default cell execution timeout in nbconvert is 30 seconds, set it to a year
+echo '# The default cell execution timeout in nbconvert is 30 seconds, set it to a year' >> /home/domino/.jupyter/jupyter_notebook_config.py
+echo 'c.ExecutePreprocessor.timeout = 365*24*60*60' >> /home/domino/.jupyter/jupyter_notebook_config.py
+
+# Allow embedding of notebooks in iframes
+echo '# Allow embedding of notebooks in iframes' >> /home/domino/.jupyter/jupyter_notebook_config.py
+echo 'c.NotebookApp.tornado_settings = { "headers": { "Content-Security-Policy": "frame-ancestors *" } }' >> /home/domino/.jupyter/jupyter_notebook_config.py 
+echo "c.NotebookApp.token = ''" >> /home/domino/.jupyter/jupyter_notebook_config.py
+
+#Custom js for domino header. New noebooks open within the same tab with the Domino banner. 
+mkdir -p /home/domino/.jupyter/custom/
+echo "require(['base/js/namespace'], function(jupyter) { jupyter._target='_self'; });" >> /home/domino/.jupyter/custom/custom.js 
+
+# Disable the login for Jupyter
+ mkdir -p /home/domino/.jupyter 
+ printf "\nc.NotebookApp.token = u'' \n\n" >> /home/domino/.jupyter/jupyter_notebook_config.py 
+ 
+# Maintain backward compatibility with ipython
+  mkdir -p /home/domino/.ipython/profile_default 
+  ln -s   /home/domino/.jupyter/jupyter_notebook_config.py /home/domino/.ipython/profile_default/ipython_notebook_config.py
+  chown -R domino:domino /home/domino/.ipython
+
+  chown -R domino:domino /home/domino/.jupyter

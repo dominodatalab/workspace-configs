@@ -1,0 +1,6 @@
+theia:
+ title: "Theia"
+ iconUrl: "https://avatars2.githubusercontent.com/u/28530323?s=200&v=4"
+ start: [ "/var/opt/workspaces/theia/start" ]
+ httpProxy:
+    port: 8888

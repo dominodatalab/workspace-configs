@@ -16,7 +16,7 @@ echo 'c.ExecutePreprocessor.timeout = 365*24*60*60' >> /home/ubuntu/.jupyter/jup
 echo '# Allow embedding of notebooks in iframes' >> /home/ubuntu/.jupyter/jupyter_notebook_config.py
 echo 'c.NotebookApp.tornado_settings = { "headers": { "Content-Security-Policy": "frame-ancestors *" } }' >> /home/ubuntu/.jupyter/jupyter_notebook_config.py 
 echo "c.NotebookApp.token = ''" >> /home/ubuntu/.jupyter/jupyter_notebook_config.py
-
+echo "c.NotebookApp.iopub_data_rate_limit=10000000000" >> /home/ubuntu/.jupyter/jupyter_notebook_config.py
 #Custom js for domino header. New noebooks open within the same tab with the Domino banner. 
 mkdir -p /home/ubuntu/.jupyter/custom/
 echo "require(['base/js/namespace'], function(jupyter) { jupyter._target='_self'; });" >> /home/ubuntu/.jupyter/custom/custom.js 

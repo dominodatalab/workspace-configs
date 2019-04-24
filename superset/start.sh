@@ -1,19 +1,23 @@
 #!/bin/bash
-# Superset setup options
+#Superset setup options
 export SUP_ROW_LIMIT=5000 
 export SUP_SECRET_KEY='thisismysecretkey' 
 export SUP_CSRF_ENABLED=True
- 
- 
- 
+
+export GUNICORN_BIND=0.0.0.0:8090
+export GUNICORN_LIMIT_REQUEST_FIELD_SIZE=0
+export GUNICORN_LIMIT_REQUEST_LINE=0
+export GUNICORN_TIMEOUT=120
+export GUNICORN_WORKERS=2
+export GUNICORN_CMD_ARGS="--reload true --log-level debug --access-logfile $DOMINO_WORKING_DIR/superset-access.log  --workers ${GUNICORN_WORKERS} --timeout ${GUNICORN_TIMEOUT} --bind ${GUNICORN_BIND} --limit-request-line ${GUNICORN_LIMIT_REQUEST_LINE} --limit-request-field_size ${GUNICORN_LIMIT_REQUEST_FIELD_SIZE}"
+
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
  
- 
 export SUPERSET_HOME=$DOMINO_WORKING_DIR
 export SUP_META_DB_URI=sqlite:///$DOMINO_WORKING_DIR/superset.db
-export PYTHONPATH=$DOMINO_WORKING_DIR:$PYTHONPATH
- 
+export PYTHONPATH=$SUPERSET_HOME
+
 # check to see if the superset config already exists, if it does skip to
 # running the user supplied docker-entrypoint.sh, note that this means
 # that users can copy over a prewritten superset config and that will be used
@@ -26,12 +30,15 @@ if [ ! -f $SUPERSET_HOME/superset_config.py ]; then
   cat > $SUPERSET_HOME/superset_config.py <<EOF
 ROW_LIMIT = ${SUP_ROW_LIMIT}
 WEBSERVER_THREADS = 4
-SUPERSET_WEBSERVER_PORT = 8088
-SUPERSET_WEBSERVER_TIMEOUT = 60
+SUPERSET_WEBSERVER_PORT = 8090
+SUPERSET_WEBSERVER_TIMEOUT = 120
 SECRET_KEY = '${SUP_SECRET_KEY}'
 SQLALCHEMY_DATABASE_URI = '${SUP_META_DB_URI}'
 CSRF_ENABLED = ${SUP_CSRF_ENABLED}
 HTTP_HEADERS = {}
+LOG_FORMAT = '%(asctime)s:%(levelname)s:%(name)s:%(message)s'
+LOG_LEVEL = 'DEBUG'
+
  
 # https://stackoverflow.com/questions/48966344/assign-anonymoususermixin-to-a-real-user
 AUTH_TYPE = 3
@@ -55,8 +62,8 @@ if [ ! -f $SUPERSET_HOME/.setup-complete ]; then
   echo "Initializing database"
   superset db upgrade
   
-#   echo "Loading examples"
-#   superset load_examples
+ echo "Loading examples"
+  superset load_examples
  
   echo "Creating default roles and permissions"
   superset init
@@ -69,25 +76,4 @@ else
 fi
  
 echo "Starting up Superset"
-superset runserver -a 0.0.0.0
- 
-###########
-# # Create an admin user (you will be prompted to set username, first and last name before setting a password)
-# echo "fabmanager create-admin"
-# fabmanager create-admin --app superset --username admin --password superset --firstname Admin --lastname Superset --email superset+admin@example.com
- 
-# # Initialize the database
-# echo "superset db upgrade"
-# superset db upgrade
- 
-# # Load some data to play with
-# echo "superset load examples"
-# superset load_examples
- 
-# # Create default roles and permissions
-# echo "superset init"
-# superset init
- 
-# # To start a development web server on port 8088, use -p to bind to another port
-# echo "superset runserver"
-# superset runserver -d
+gunicorn superset:app
