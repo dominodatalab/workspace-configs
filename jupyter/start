@@ -5,6 +5,8 @@ IP_ADDR=$(cat /etc/hostname)
 CONF_DIR="$HOME/.jupyter"
 CONF_FILE="${CONF_DIR}/jupyter_notebook_config.py"
 
+PREFIX=/${DOMINO_PROJECT_OWNER}/${DOMINO_PROJECT_NAME}/notebookSession/${DOMINO_RUN_ID}/
+
 mkdir -p "${CONF_DIR}"
 
 cat <<EOF >>"${CONF_FILE}"
