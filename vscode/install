@@ -16,7 +16,7 @@ cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.4.1198
 curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2019.4.11987/vspackage | bsdtar -xvf - extension
 
 cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.4.11987/extension/ && mv * ../
-chown ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
+chown -R ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
 
 
 export PATH=/opt/code-server:$PATH
