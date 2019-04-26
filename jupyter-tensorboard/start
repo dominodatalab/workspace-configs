@@ -10,6 +10,8 @@ CONF_FILE="${CONF_DIR}/jupyter_notebook_config.py"
 
 mkdir -p "${CONF_DIR}"
 
+PREFIX=/${DOMINO_PROJECT_OWNER}/${DOMINO_PROJECT_NAME}/notebookSession/${DOMINO_RUN_ID}/
+
 cat <<EOF >>"${CONF_FILE}"
 c.NotebookApp.notebook_dir = '/'
 c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}, 'static_url_prefix': '${PREFIX}static/'}
