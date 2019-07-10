@@ -5,10 +5,14 @@ IP_ADDR=$(cat /etc/hostname)
 CONF_DIR="$HOME/.jupyter"
 CONF_FILE="${CONF_DIR}/jupyter_notebook_config.py"
 
+PREFIX=/${DOMINO_PROJECT_OWNER}/${DOMINO_PROJECT_NAME}/notebookSession/${DOMINO_RUN_ID}/
+
 mkdir -p "${CONF_DIR}"
 
 cat <<EOF >>"${CONF_FILE}"
 c.NotebookApp.notebook_dir = '/'
+c.NotebookApp.base_url = '${PREFIX}'
+c.NotebookApp.base_kernel_url = '${PREFIX}'
 c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}}
 c.NotebookApp.default_url = 'tree${DOMINO_WORKING_DIR}'
 #disable quit button in Jupyter 5.5+
