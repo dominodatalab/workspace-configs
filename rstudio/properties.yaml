@@ -4,3 +4,4 @@ rstudio:
   start: [ "/var/opt/workspaces/rstudio/start" ]
   httpProxy:
     port: 8888
+    requireSubdomain: false
