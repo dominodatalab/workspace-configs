@@ -4,4 +4,4 @@ PREFIX=/${DOMINO_PROJECT_OWNER}/${DOMINO_PROJECT_NAME}/notebookSession/${DOMINO_
 
 java -jar /opt/h2o/h2o.jar -port 8888 -ice_root /tmp/h2o -flow_dir $DOMINO_WORKING_DIR -context_path ${PREFIX}
 
-RUN chmod -R 755 /opt/h2o && chown -R ubuntu:ubuntu /opt/h2o
+chmod -R 755 /opt/h2o && chown -R ubuntu:ubuntu /opt/h2o
