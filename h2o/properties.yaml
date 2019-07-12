@@ -1,6 +1,9 @@
 h20Flow:
-    title: "H2O Flow"
-    iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/H2O.svg?sanitize=true"
-    start: [ "/var/opt/workspaces/h2o/start" ]
-    httpProxy:
-        port: 8888
+  title: "H2O Flow"
+  iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/H2O.svg?sanitize=true"
+  start: [ "/var/opt/workspaces/h2o/start" ]
+  httpProxy:
+    port: 8888
+    internalPath: "/{{ownerUsername}}/{{projectName}}/{{sessionPathComponent}}/{{runId}}/"
+    requireSubdomains: false
+

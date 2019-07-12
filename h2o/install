@@ -1,6 +1,6 @@
-    cd /opt/
-  wget https://h2o-release.s3.amazonaws.com/h2o/rel-wolpert/4/h2o-3.18.0.4.zip   
 cd /opt/
-  unzip h2o-3.18.0.4.zip
-  mv /opt/h2o-3.18.0.4 /opt/h2o
-  rm /opt/h2o-3.18.0.4.zip
+wget https://h2o-release.s3.amazonaws.com/h2o/rel-wolpert/4/h2o-3.18.0.4.zip   
+cd /opt/
+unzip h2o-3.18.0.4.zip
+mv /opt/h2o-3.18.0.4 /opt/h2o
+rm /opt/h2o-3.18.0.4.zip
