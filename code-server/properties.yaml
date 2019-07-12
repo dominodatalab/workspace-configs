@@ -4,3 +4,4 @@ code-server:
  start: [ "/var/opt/workspaces/code-server/start" ]
  httpProxy:
     port: 8888
+    requireSubdomain: false
