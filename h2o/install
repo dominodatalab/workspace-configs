@@ -1,5 +1,5 @@
 cd /opt/
-wget https://h2o-release.s3.amazonaws.com/h2o/rel-wolpert/4/h2o-3.24.0.5.zip   
+wget http://h2o-release.s3.amazonaws.com/h2o/rel-yates/5/h2o-3.24.0.5.zip  
 cd /opt/
 unzip h2o-3.24.0.5.zip
 mv /opt/h2o-3.24.0.5 /opt/h2o
