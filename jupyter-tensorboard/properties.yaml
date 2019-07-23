@@ -1,6 +1,6 @@
 jupyter-tensorboard:
-  title: "Jupyter (Python, R, Julia)"
-  iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/tensorboard.png?sanitize=true"
+  title: "Jupyter+Tensorboard"
+  iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/tensorboard.png"
   start: [ "/var/opt/workspaces/jupyter-tensorboard/start" ]
   httpProxy:
     port: 8888

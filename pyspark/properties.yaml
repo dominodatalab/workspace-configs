@@ -6,4 +6,3 @@ pyspark:
     port: 8888
     rewrite: false
     internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
-  supportedFileExtensions: [ ".ipynb" ]

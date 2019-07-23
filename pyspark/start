@@ -1,18 +1,18 @@
-
 #!/bin/bash
 set -o nounset -o errexit -o pipefail
- 
-IP_ADDR=$(/sbin/ifconfig eth0 | grep "inet addr" | cut -d ":" -f2 | cut -d " " -f1)
+
+IP_ADDR=$(cat /etc/hostname)
 CONF_DIR="$HOME/.jupyter"
 CONF_FILE="${CONF_DIR}/jupyter_notebook_config.py"
- 
+
 mkdir -p "${CONF_DIR}"
- 
+
+PREFIX=/${DOMINO_PROJECT_OWNER}/${DOMINO_PROJECT_NAME}/notebookSession/${DOMINO_RUN_ID}/
+
 cat <<EOF >>"${CONF_FILE}"
-c = get_config()
 c.NotebookApp.notebook_dir = '/'
-c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}}
-c.NotebookApp.default_url = '/tree${DOMINO_WORKING_DIR}'
+c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}, 'static_url_prefix': '${PREFIX}static/'}
+c.NotebookApp.default_url = 'tree${DOMINO_WORKING_DIR}'
 #disable quit button in Jupyter 5.5+
 c.NotebookApp.quit_button = False 
 EOF
