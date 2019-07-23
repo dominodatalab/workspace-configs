@@ -4,3 +4,4 @@ Zeppelin:
   start: [ "/var/opt/workspaces/Zeppelin/start" ]
   httpProxy:
     port: 8888
+    requireSubdomain: false
