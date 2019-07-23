@@ -1,7 +1,6 @@
 cd /opt/
-wget http://h2o-release.s3.amazonaws.com/h2o/rel-yates/5/h2o-3.24.0.5.zip  
+wget https://h2o-release.s3.amazonaws.com/h2o/rel-wolpert/4/h2o-3.18.0.4.zip   
 cd /opt/
-unzip h2o-3.24.0.5.zip
-mv /opt/h2o-3.24.0.5 /opt/h2o
-rm /opt/h2o-3.24.0.5.zip
-chmod -R 755 /opt/h2o && chown -R ubuntu:ubuntu /opt/h2o
+unzip h2o-3.18.0.4.zip
+mv /opt/h2o-3.18.0.4 /opt/h2o
+rm /opt/h2o-3.18.0.4.zip
