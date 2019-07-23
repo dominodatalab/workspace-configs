@@ -1,5 +1,5 @@
 jupyter:
-  title: "Jupyter (Python, R)"
+  title: "Jupyter (Python, R, Julia)"
   iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/Jupyter.svg?sanitize=true"
   start: [ "/var/opt/workspaces/jupyter/start" ]
   httpProxy:
