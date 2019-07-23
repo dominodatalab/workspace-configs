@@ -4,7 +4,8 @@ set -o nounset -o errexit -o pipefail
 
 mkdir -p /tmp/rstudio-temp
 cd /tmp/rstudio-temp
-apt-get install -y gdebi-core libapparmor1
+apt-get update -y
+apt-get install -y gdebi libapparmor1
 wget  -q https://download2.rstudio.org/server/trusty/amd64/rstudio-server-1.2.1335-amd64.deb
 gdebi -n rstudio-server-1.2.1335-amd64.deb
 ln -s /usr/lib/rstudio-server /usr/local/lib/rstudio-server 
@@ -20,3 +21,5 @@ chown ubuntu:ubuntu /etc/rstudio/rserver.conf
 #Make rmarkdown::render work outside of rstudio. https://github.com/rstudio/rmarkdown/blob/master/PANDOC.md
 ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc /usr/local/bin
 ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc-citeproc /usr/local/bin
+
+rm -rf /var/lib/apt/lists/*
