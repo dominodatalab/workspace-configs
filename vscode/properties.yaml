@@ -4,3 +4,4 @@ vscode:
  start: [ "/var/opt/workspaces/vscode/start" ]
  httpProxy:
     port: 8888
+    requireSubdomain: false
