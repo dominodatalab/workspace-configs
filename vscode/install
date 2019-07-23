@@ -24,4 +24,3 @@ export PATH=/opt/code-server:$PATH
 echo export PATH=/opt/code-server:$PATH >> /home/ubuntu/.domino-defaults
 
 rm -rf /var/lib/apt/lists/*
-

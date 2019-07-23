@@ -1,5 +1,5 @@
 #!/bin/bash
 
-java -jar /opt/h2o/h2o.jar -port 8888 -ice_root /tmp/h2o -flow_dir $DOMINO_WORKING_DIR
+PREFIX=/${DOMINO_PROJECT_OWNER}/${DOMINO_PROJECT_NAME}/notebookSession/${DOMINO_RUN_ID}
 
-RUN chmod -R 755 /opt/h2o && chown -R ubuntu:ubuntu /opt/h2o
+java -jar /opt/h2o/h2o.jar -port 8888 -ice_root /tmp/h2o -flow_dir $DOMINO_WORKING_DIR -context_path ${PREFIX}
