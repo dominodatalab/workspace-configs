@@ -1,4 +1,5 @@
 #!/bin/bash
 set -o nounset -o errexit -o pipefail
 
-pip install --upgrade six && pip install jupyterlab && pip install --upgrade jupyter
+#Jupyterlab is pinned since there a compatibility issue with nbserverproxy and jupyter-server-proxy
+pip install --upgrade six && pip install jupyterlab==0.35.4 && pip install --upgrade jupyter
