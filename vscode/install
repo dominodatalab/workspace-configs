@@ -13,7 +13,7 @@ cd /opt && \
 #install the python extension for vs-code
 apt-get update -y
 apt-get install -y bsdtar
-mkdir -p /home/ubuntu/.local/share/code-server/extensions/ms-python.python-22019.6.24221 && \
+mkdir -p /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.6.24221 && \
 cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.6.24221
 curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2019.6.24221/vspackage | bsdtar -xvf - extension
 
@@ -21,10 +21,10 @@ cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.6.2422
 
 
 # Install a SQL browser/run extension for VS code
-RUN mkdir -p /home/ubuntu/.local/share/code-server/extensions/mtxr.sqltools-0.15.1
-RUN cd /home/ubuntu/.local/share/code-server/extensions/mtxr.sqltools-0.15.1 && \
-    curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/mtxr/vsextensions/sqltools/0.19.6/vspackage | bsdtar -xvf - extension
-RUN mv /home/ubuntu/.local/share/code-server/extensions/mtxr.sqltools-0.15.1/extension/* /home/ubuntu/.local/share/code-server/extensions/mtxr.sqltools-0.15.1/
+ mkdir -p /home/ubuntu/.local/share/code-server/extensions/mtxr.sqltools-0.15.1
+ cd /home/ubuntu/.local/share/code-server/extensions/mtxr.sqltools-0.15.1 && \
+curl -JL https://marketplace.visualstudio.com/_apis/public/gallery/publishers/mtxr/vsextensions/sqltools/0.19.6/vspackage | bsdtar -xvf - extension
+ mv /home/ubuntu/.local/share/code-server/extensions/mtxr.sqltools-0.15.1/extension/* /home/ubuntu/.local/share/code-server/extensions/mtxr.sqltools-0.15.1/
  
 
 
