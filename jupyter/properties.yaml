@@ -1,6 +1,6 @@
 jupyter:
   title: "Jupyter (Python, R, Julia)"
-  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/Jupyter.svg?sanitize=true"
+  iconUrl: "/assets/images/workspace-logos/Jupyter.svg"
   start: [ "/var/opt/workspaces/jupyter/start" ]
   httpProxy:
     port: 8888

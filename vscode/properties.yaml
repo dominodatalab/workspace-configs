@@ -1,6 +1,6 @@
 vscode:
  title: "vscode"
- iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/vscode.svg?sanitize=true"
+ iconUrl: "/assets/images/workspace-logos/vscode.svg"
  start: [ "/var/opt/workspaces/vscode/start" ]
  httpProxy:
     port: 8888

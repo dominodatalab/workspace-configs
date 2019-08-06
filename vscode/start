@@ -1,2 +1,2 @@
 #!/bin/bash
-code-server ${DOMINO_WORKING_DIR} --no-auth -p 8888 --disable-telemetry --allow-http 
+code-server ${DOMINO_WORKING_DIR} -d ${DOMINO_WORKING_DIR}/vscode-settings --no-auth -p 8888 --disable-telemetry --allow-http --extensions-dir ${HOME}/.local/share/code-server/extensions

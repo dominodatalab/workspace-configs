@@ -1,6 +1,6 @@
 rstudio:
   title: "RStudio"
-  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/Rstudio.svg?sanitize=true"
+  iconUrl: "/assets/images/workspace-logos/Rstudio.svg"
   start: [ "/var/opt/workspaces/rstudio/start" ]
   httpProxy:
     port: 8888

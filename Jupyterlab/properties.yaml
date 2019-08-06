@@ -1,6 +1,6 @@
 jupyterlab:
   title: "JupyterLab"
-  iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/jupyterlab.svg?sanitize=true"
+  iconUrl: "/assets/images/workspace-logos/jupyterlab.svg"
   start: [  /var/opt/workspaces/Jupyterlab/start.sh ]
   httpProxy:
     internalPath: "/{{ownerUsername}}/{{projectName}}/{{sessionPathComponent}}/{{runId}}/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
