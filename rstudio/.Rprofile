@@ -50,4 +50,3 @@ if (Sys.getenv("RSTUDIO") != 1) {
   }
 }
 
-options(error = .domino.handleError)
