@@ -26,6 +26,6 @@ chown -R ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
 
 export PATH=/opt/code-server:$PATH
 
-echo export PATH=/opt/code-server:$PATH >> /home/ubuntu/.domino-defaults
+echo 'export PATH=/opt/code-server:$PATH' >> /home/ubuntu/.domino-defaults
 
 rm -rf /var/lib/apt/lists/*
