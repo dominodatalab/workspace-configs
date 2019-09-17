@@ -6,7 +6,7 @@ set -o nounset -o errexit -o pipefail
 cd /opt && \
   mkdir /opt/code-server && \
   cd /opt/code-server && \
-  wget -qO- https://github.com/codercom/code-server/releases/download/1.868-vsc1.33.1/code-server1.868-vsc1.33.1-linux-x64.tar.gz | tar zxvf - --strip-components=1
+  wget -qO- https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-server1.1156-vsc1.33.1-linux-x64.tar.gz | tar zxvf - --strip-components=1
 
 
 
@@ -26,6 +26,6 @@ chown -R ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
 
 export PATH=/opt/code-server:$PATH
 
-echo export PATH=/opt/code-server:$PATH >> /home/ubuntu/.domino-defaults
+echo 'export PATH=/opt/code-server:$PATH' >> /home/ubuntu/.domino-defaults
 
 rm -rf /var/lib/apt/lists/*
