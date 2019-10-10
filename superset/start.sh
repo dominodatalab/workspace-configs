@@ -64,4 +64,4 @@ else
 fi
 
 echo "Starting up Superset"
-superset runserver -a 0.0.0.0
+superset run -p 8088 --with-threads --reload --debugger
