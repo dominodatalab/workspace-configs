@@ -6,7 +6,7 @@ set -o nounset -o errexit -o pipefail
 cd /opt && \
   mkdir /opt/code-server && \
   cd /opt/code-server && \
-  wget -qO- https://github.com/cdr/code-server/releases/download/2.1692-vsc1.39.2/code-server2.1692-vsc1.39.2-alpine-x86_64.tar.gz | tar zxvf - --strip-components=1
+  wget -qO- https://github.com/cdr/code-server/releases/download/2.1692-vsc1.39.2/code-server2.1692-vsc1.39.2-linux-x86_64.tar.gz | tar zxvf - --strip-components=1
 
 
 
