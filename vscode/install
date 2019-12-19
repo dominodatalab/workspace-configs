@@ -15,7 +15,7 @@ wget -P /home/ubuntu/.local/share/code-server/extensions/ https://github.com/mic
 
 
 
-chown -R ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
+chown -R ubuntu:ubuntu /home/ubuntu/.local/share/
 
 
 export PATH=/opt/code-server:$PATH
