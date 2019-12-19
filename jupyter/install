@@ -2,7 +2,7 @@
 set -o nounset -o errexit -o pipefail
 
 #install Jupyter
-pip install jsonschema jupyter
+pip install jupyter
 
 # # #   # CONFIGURE Jupyter
  mkdir -p /home/ubuntu/.jupyter
