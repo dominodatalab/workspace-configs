@@ -12,7 +12,6 @@ mkdir -p "${CONF_DIR}"
 cat <<EOF >>"${CONF_FILE}"
 c.NotebookApp.notebook_dir = '/'
 c.NotebookApp.base_url = '${PREFIX}'
-c.NotebookApp.base_kernel_url = '${PREFIX}'
 c.NotebookApp.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors *'}}
 c.NotebookApp.default_url = 'tree${DOMINO_WORKING_DIR}'
 #disable quit button in Jupyter 5.5+
