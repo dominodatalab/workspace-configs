@@ -11,8 +11,13 @@ cd /opt && \
 
 
 #install the python extension for vs-code
-wget -P /home/ubuntu/.local/share/code-server/extensions/ https://github.com/microsoft/vscode-python/releases/download/2019.11.50794/ms-python-release.vsix
+apt-get update -y
+apt-get install -y bsdtar
+mkdir -p /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.11.50794 && \
+cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.11.50794
+curl -JL https://github.com/microsoft/vscode-python/releases/download/2019.11.50794/ms-python-release.vsix | bsdtar -xvf - extension
 
+cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.11.50794/extension/ && mv * ../
 
 
 chown -R ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
