@@ -2,7 +2,7 @@
 set -o nounset -o errexit -o pipefail
 
 
- yum install -y -q https://download2.rstudio.org/rstudio-server-rhel-1.1.463-x86_64.rpm
+ yum install -y -q https://download2.rstudio.org/server/centos6/x86_64/rstudio-server-rhel-1.2.5033-x86_64.rpm
 
 
  ln -s /usr/lib/rstudio-server /usr/local/lib/rstudio-server 
