@@ -1,4 +1,4 @@
 #!/bin/bash
 set -o nounset -o errexit -o pipefail
 
- pip install jupyterlab
+ pip install jupyterlab==1.2.5
