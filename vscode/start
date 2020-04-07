@@ -1,2 +1,2 @@
 #!/bin/bash
-code-server ${DOMINO_WORKING_DIR} --user-data-dir ${DOMINO_WORKING_DIR}/vscode-settings --auth none --allow-http --host localhost --port ${1:-8888} --disable-telemetry --extensions-dir ${HOME}/.local/share/code-server/extensions --disable-ssh
+code-server ${DOMINO_WORKING_DIR} --user-data-dir ${DOMINO_WORKING_DIR}/vscode-settings --auth none --host localhost --port ${1:-8888} --disable-telemetry --extensions-dir ${HOME}/.local/share/code-server/extensions --disable-ssh --verbose
