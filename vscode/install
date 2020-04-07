@@ -6,17 +6,17 @@ set -o nounset -o errexit -o pipefail
 cd /opt && \
   mkdir /opt/code-server && \
   cd /opt/code-server && \
-  wget -qO- https://github.com/cdr/code-server/releases/download/2.1698/code-server2.1698-vsc1.41.1-linux-x86_64.tar.gz | tar zxvf - --strip-components=1
+  wget -qO- https://github.com/cdr/code-server/releases/download/3.0.2/code-server-3.0.2-linux-x86_64.tar.gz | tar zxvf - --strip-components=1
 
 
 #install the python extension for vs-code
 apt-get update -y
 apt-get install -y bsdtar
-mkdir -p /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.11.50794 && \
-cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.11.50794
-curl -JL https://github.com/microsoft/vscode-python/releases/download/2019.11.50794/ms-python-release.vsix | bsdtar -xvf - extension
+mkdir -p /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2020.3.71659 && \
+cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2020.3.71659
+curl -JL https://github.com/microsoft/vscode-python/releases/download/2020.3.71659/ms-python-release.vsix | bsdtar -xvf - extension
 
-cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2019.11.50794/extension/ && mv * ../
+cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2020.3.71659/extension/ && mv * ../
 
 
 chown -R ubuntu:ubuntu /home/ubuntu/.local/share/code-server/
