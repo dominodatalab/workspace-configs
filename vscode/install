@@ -4,7 +4,6 @@ set -o nounset -o errexit -o pipefail
 
 #install code-server  
 cd /opt && \
-  rm -rf /opt/code-server && \ 
   mkdir /opt/code-server && \
   cd /opt/code-server && \
   wget -qO- https://github.com/cdr/code-server/releases/download/3.0.2/code-server-3.0.2-linux-x86_64.tar.gz | tar zxvf - --strip-components=1
