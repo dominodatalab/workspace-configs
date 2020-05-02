@@ -26,4 +26,6 @@ export PATH=/opt/code-server:$PATH
 
 echo 'export PATH=/opt/code-server:$PATH' >> /home/ubuntu/.domino-defaults
 
+echo '"telemetry.enableTelemetry": false' >> /home/ubuntu/.local/share/code-server/User/settings.json
+
 rm -rf /var/lib/apt/lists/*
