@@ -1,2 +1,5 @@
 #!/bin/bash
+
+echo '"telemetry.enableTelemetry": false' >> /home/ubuntu/.local/share/code-server/User/settings.json
+
 code-server ${DOMINO_WORKING_DIR} --host 0.0.0.0 --user-data-dir ${DOMINO_WORKING_DIR}/vscode-settings --auth none --port ${1:-8888} --extensions-dir ${HOME}/.local/share/code-server/extensions
