@@ -3,4 +3,4 @@
 #mkdir /home/ubuntu/.local/share/code-server/User
 #echo '{"telemetry.enableTelemetry": false}' >> /home/ubuntu/.local/share/code-server/User/settings.json
 
-code-server --folder ${DOMINO_WORKING_DIR} --user-data-dir ${DOMINO_WORKING_DIR}/vscode-settings --auth none --bind-addr 0.0.0.0:8888 --extensions-dir ${HOME}/.local/share/code-server/extensions --log trace
+code-server ${DOMINO_WORKING_DIR} --user-data-dir ${DOMINO_WORKING_DIR}/vscode-settings --auth none --bind-addr 0.0.0.0:8888 --extensions-dir ${HOME}/.local/share/code-server/extensions --log trace
