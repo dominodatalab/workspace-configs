@@ -6,7 +6,7 @@ set -o nounset -o errexit -o pipefail
 cd /opt && \
   mkdir /opt/code-server && \
   cd /opt/code-server && \
-  wget -qO- https://github.com/cdr/code-server/releases/download/3.1.1/code-server-3.1.1-linux-x86_64.tar.gz | tar zxvf - --strip-components=1
+  wget -qO- https://github.com/cdr/code-server/releases/download/3.2.0/code-server-3.2.0-linux-x86_64.tar.gz | tar zxvf - --strip-components=1
 
 
 #install the python extension for vs-code
