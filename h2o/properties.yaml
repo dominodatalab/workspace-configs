@@ -4,6 +4,5 @@ h20Flow:
   start: [ "/var/opt/workspaces/h2o/start" ]
   httpProxy:
     port: 8888
-    internalPath: "/{{ownerUsername}}/{{projectName}}/{{sessionPathComponent}}/{{runId}}/"
+    internalPath: "/"
     requireSubdomain: false
-
