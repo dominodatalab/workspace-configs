@@ -27,7 +27,7 @@ echo "require(['base/js/namespace'], function(jupyter) { jupyter._target='_self'
  
 # Maintain backward compatibility with ipython
   mkdir -p /home/ubuntu/.ipython/profile_default 
-  ln -s   /home/ubuntu/.jupyter/jupyter_notebook_config.py /home/ubuntu/.ipython/profile_default/ipython_notebook_config.py
+  ln -sf   /home/ubuntu/.jupyter/jupyter_notebook_config.py /home/ubuntu/.ipython/profile_default/ipython_notebook_config.py
   chown -R ubuntu:ubuntu /home/ubuntu/.ipython
 
   chown -R ubuntu:ubuntu /home/ubuntu/.jupyter
