@@ -11,7 +11,7 @@ cd /opt && \
 
 #install the python extension for vs-code
 apt-get update -y
-apt-get install -y bsdtar
+apt-get install -y libarchive-tools
 mkdir -p /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2020.4.74986 && \
 cd /home/ubuntu/.local/share/code-server/extensions/ms-python.python-2020.4.74986
 curl -JL https://github.com/microsoft/vscode-python/releases/download/2020.4.74986/ms-python-release.vsix | bsdtar -xvf - extension
