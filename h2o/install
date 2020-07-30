@@ -1,9 +1,0 @@
-#!/bin/bash
-#DO NOT UPGRADE, 2.24.0.5 has X-Frame-Options header that prevents us from displaying h2o in iframe
-cd /opt/
-# Old Release wget https://h2o-release.s3.amazonaws.com/h2o/rel-wolpert/4/h2o-3.18.0.4.zip   
-wget http://h2o-release.s3.amazonaws.com/h2o/rel-zahradnik/7/h2o-3.30.0.7.zip
-unzip h2o-3.30.0.7.zip
-mv /opt/h2o-3.30.0.7 /opt/h2o
-rm /opt/h2o-3.30.0.7.zip
-chmod -R 755 /opt/h2o && chown -R ubuntu:ubuntu /opt/h2o
