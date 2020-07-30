@@ -1,3 +1,0 @@
-#!/bin/bash
-
-java -jar /opt/h2o/h2o.jar -port 8888 -ice_root /tmp/h2o -flow_dir $DOMINO_WORKING_DIR
