@@ -1,3 +1,19 @@
 #!/bin/bash
 
+FILE=${DOMINO_WORKING_DIR}/vscode-settings/User/settings.json
+
+##turn off auto updating a VSCode extensions
+#update a user setting file if it does exist
+if [ -f "$FILE" ]; then
+jq --argjson value false '. + {"extensions.autoUpdate": $value}' $FILE > temp-settings.json
+mv temp-settings.json $FILE
+rm -rf temp-settings.json
+fi
+
+#add a user setting file if it doesn't exist
+if [ ! -f "$FILE" ]; then
+mkdir -p ${DOMINO_WORKING_DIR}/vscode-settings/User/
+printf '{\n\t"extensions.autoUpdate":false\n}\n' > ${DOMINO_WORKING_DIR}/vscode-settings/User/settings.json
+fi
+
 code-server ${DOMINO_WORKING_DIR} --user-data-dir ${DOMINO_WORKING_DIR}/vscode-settings --auth none --bind-addr 0.0.0.0:8888 --extensions-dir ${HOME}/.local/share/code-server/extensions --disable-telemetry
