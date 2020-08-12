@@ -35,7 +35,7 @@ rm -rf \
   /var/tmp/* 
 
 ##Install VSCode extensions for python (pinned to this version due to a bug)
-export PATH=/opt/code-server:$PATH && \
+export PATH=/opt/code-server/bin:$PATH && \
 cd /tmp && \
 wget -q https://github.com/microsoft/vscode-python/releases/download/2020.5.86806/ms-python-release.vsix && \
 code-server \
