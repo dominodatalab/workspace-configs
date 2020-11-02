@@ -18,7 +18,7 @@ rm -rf \
   /var/lib/apt/lists/* \
   /var/tmp/*
 
-CODE_SERVER_VERSION=3.5.0
+CODE_SERVER_VERSION=3.6.1
 
 mkdir /opt/code-server && \
 cd /opt/code-server && \
