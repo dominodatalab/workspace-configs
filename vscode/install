@@ -18,7 +18,7 @@ rm -rf \
   /var/lib/apt/lists/* \
   /var/tmp/*
 
-CODE_SERVER_VERSION=3.7.2
+CODE_SERVER_VERSION=3.7.3
 
 mkdir /opt/code-server && \
 cd /opt/code-server && \
@@ -34,12 +34,13 @@ rm -rf \
   /var/lib/apt/lists/* \
   /var/tmp/* 
 
-##Install VSCode extensions for python (pinned to this version due to a bug)
-# export PATH=/opt/code-server/bin:$PATH && \
-# cd /tmp && \
-# wget -q https://github.com/microsoft/vscode-python/releases/download/2020.5.86806/ms-python-release.vsix && \
-# code-server \
-#   --install-extension ms-python-release.vsix \
-#   --extensions-dir /home/ubuntu/.local/share/code-server/extensions && \
-# chown -R ubuntu:ubuntu /home/ubuntu/.local/ && \
-# rm -rf /tmp/*
+#Install VSCode extensions for python (pinned to this version due to a bug)
+export PATH=/opt/code-server/bin:$PATH && \
+cd /tmp && \
+#wget -q https://github.com/microsoft/vscode-python/releases/download/2020.5.86806/ms-python-release.vsix && \
+#code-server \
+#  --install-extension ms-python-release.vsix \
+#  --extensions-dir /home/ubuntu/.local/share/code-server/extensions && \
+code-server --install-extension ms-python.python --extensions-dir /home/ubuntu/.local/share/code-server/extensions && \
+chown -R ubuntu:ubuntu /home/ubuntu/.local/ && \
+rm -rf /tmp/*
