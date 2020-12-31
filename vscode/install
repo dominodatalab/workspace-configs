@@ -37,10 +37,15 @@ rm -rf \
 #Install VSCode extensions for python (pinned to this version due to a bug)
 export PATH=/opt/code-server/bin:$PATH && \
 cd /tmp && \
+mkdir -p /home/ubuntu/.local/share/code-server/ && \
+mkdir -p /home/ubuntu/.local/share/code-server/User && \
+echo "{\"extensions.autoCheckUpdates\": false, \"extensions.autoUpdate\": false}" > ~/.local/share/code-server/User/settings.json && \
+wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
+ && code-server --install-extension ./ms-python-release.vsix --extensions-dir /home/ubuntu/.local/share/code-server/extensions || true
 #wget -q https://github.com/microsoft/vscode-python/releases/download/2020.5.86806/ms-python-release.vsix && \
 #code-server \
 #  --install-extension ms-python-release.vsix \
 #  --extensions-dir /home/ubuntu/.local/share/code-server/extensions && \
-code-server --install-extension ms-python.python --extensions-dir /home/ubuntu/.local/share/code-server/extensions && \
+# code-server --install-extension ms-python.python --extensions-dir /home/ubuntu/.local/share/code-server/extensions && \
 chown -R ubuntu:ubuntu /home/ubuntu/.local/ && \
 rm -rf /tmp/*
