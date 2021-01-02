@@ -2,8 +2,8 @@
 set -o nounset -o errexit -o pipefail
 
 #install Jupyter
-pip install --use-feature=resolver-2020 'chardet<4.0,>=2.0' #version depdendency on jupyter
-pip install --use-feature=resolver-2020 -U jupyter
+pip install 'chardet<4.0,>=2.0' #version depdendency on jupyter
+pip install -U jupyter
 
 # # #   # CONFIGURE Jupyter
 mkdir -p /home/ubuntu/.jupyter
