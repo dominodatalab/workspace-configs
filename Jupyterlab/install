@@ -1,4 +1,4 @@
 #!/bin/bash
 set -o nounset -o errexit -o pipefail
-pip install 'jupyterlab<3.0.0'
+pip install jupyterlab
 # jupyeter server proxy is not compatible withe jupyterlab > 3.0.0 as of this writing, 12/30/2020
