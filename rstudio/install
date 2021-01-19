@@ -3,7 +3,7 @@ set -o nounset -o errexit -o pipefail
 
 mkdir -p /tmp/rstudio-temp
 cd /tmp/rstudio-temp
-apt-get update && apt-get install -y gdebi libapparmor1
+apt-get update -y && apt-get install -y gdebi libapparmor1
 wget  -q https://download2.rstudio.org/server/xenial/amd64/rstudio-server-1.2.5042-amd64.deb
 gdebi -n rstudio-server-1.2.5042-amd64.deb
 ln -sf /usr/lib/rstudio-server /usr/local/lib/rstudio-server 
