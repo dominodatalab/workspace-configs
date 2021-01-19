@@ -6,7 +6,8 @@ cd /tmp/rstudio-temp
 apt-get update -y && apt-get install -y gdebi libapparmor1
 echo "Downloading Rsutdio Server................................................"
 wget  -q https://download2.rstudio.org/server/xenial/amd64/rstudio-server-1.2.5033-amd64.deb
-gdebi -n rstudio-server-1.2.5033-amd64.deb
+echo "Installing RStudio server ............................................................."
+gdebi rstudio-server-1.2.5033-amd64.deb
 echo "Finished installing Rsstudio server..................................."
 ln -sf /usr/lib/rstudio-server /usr/local/lib/rstudio-server 
 chown -R root:root /usr/lib/rstudio-server
