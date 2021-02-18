@@ -15,6 +15,7 @@ printenv >> ~/.Renviron
 mkdir -p ~/.rstudio/monitored/user-settings/
 echo -e "initialWorkingDirectory=\"${DRT_WORKING_DIR:-"${DOMINO_WORKING_DIR}"}\"\n" >> ~/.rstudio/monitored/user-settings/user-settings
 
-
-
+mkdir -p /tmp/rstudio-server
+RSTUDIO_SERVER_DATA_DIR=/tmp/rstudio-server
+#/usr/lib/rstudio-server/bin/rserver --www-port=8888 --auth-none=1 --server-daemonize=0 --server-data-dir="$RSTUDIO_SERVER_DATA_DIR" --server-pid-file="$RSTUDIO_SERVER_DATA_DIR/rstudio-server.pid"
 /usr/lib/rstudio-server/bin/rserver --www-port=8888 --auth-none=1 --server-app-armor-enabled=0

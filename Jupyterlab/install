@@ -1,4 +1,4 @@
 #!/bin/bash
 set -o nounset -o errexit -o pipefail
-
- pip install jupyterlab==1.2.12
+pip install 'jupyterlab<3.0.0'
+# jupyterlab git extentions are not compatible withe jupyterlab > 3.0.0 as of this writing, 1/13/2021
