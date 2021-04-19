@@ -16,5 +16,5 @@ c.NotebookApp.default_url = '/lab/tree${DOMINO_WORKING_DIR}'
 c.NotebookApp.token = u''
 EOF
 
-COMMAND='jupyter-lab --config="$CONF_FILE" --no-browser --ip="0.0.0.0" 2>&1'
+COMMAND='jupyter-lab --config="$CONF_FILE" --no-browser --ip="0.0.0.0"'
 eval ${COMMAND} 
