@@ -1,0 +1,7 @@
+ttyd:
+  title: "ttyd Terminal"
+  iconUrl: "/assets/images/workspace-logos/ttyd.svg"
+  start: [ "/var/opt/workspaces/ttyd/start" ]
+  httpProxy:
+    port: 8888
+    requireSubdomain: false
