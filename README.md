@@ -8,7 +8,7 @@ Make sure you using the latest tag/release (e.g. 2021q1-v1 in the example). **Do
 ```bash
 # Note: Make sure you are using the latest release if you'd like the latest version of the workspaces
 # https://github.com/dominodatalab/workspace-configs/releases/latest
-RUN mkdir /var/opt/workspaces && cd /tmp && \
+RUN mkdir -p /var/opt/workspaces && cd /tmp && \
     wget https://github.com/dominodatalab/workspace-configs/archive/2021q1-v1.zip && \
     unzip 2021q1-v1.zip && \
     cp -Rf workspace-configs-2021q1-v1/* /var/opt/workspaces && \
