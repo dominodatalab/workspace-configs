@@ -1,5 +1,5 @@
 ttyd:
-  title: "ttyd Terminal"
+  title: "Terminal"
   iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/ttyd.svg"
   start: [ "/var/opt/workspaces/ttyd/start" ]
   httpProxy:
