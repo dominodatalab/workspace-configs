@@ -1,6 +1,6 @@
 ttyd:
   title: "ttyd Terminal"
-  iconUrl: "/assets/images/workspace-logos/ttyd.svg"
+  iconUrl: "https://raw.githubusercontent.com/dominodatalab/workspace-configs/develop/workspace-logos/ttyd.svg"
   start: [ "/var/opt/workspaces/ttyd/start" ]
   httpProxy:
     port: 8888
