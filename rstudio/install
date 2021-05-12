@@ -8,8 +8,6 @@ wget  -q https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-
 gdebi -n rstudio-server-1.4.1707-amd64.deb
 ln -sf /usr/lib/rstudio-server /usr/local/lib/rstudio-server 
 chown -R root:root /usr/lib/rstudio-server
-chown -R ubuntu:ubuntu /var/run/rstudio-server
-chown -R ubuntu:ubuntu /var/lib/rstudio-server
 cd ~
 rm -rf /tmp/rstudio-temp
 
