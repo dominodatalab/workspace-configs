@@ -18,5 +18,4 @@ chown ubuntu:ubuntu /etc/rstudio/rserver.conf
 ln -sf /usr/lib/rstudio-server/bin/pandoc/pandoc /usr/local/bin
 ln -sf /usr/lib/rstudio-server/bin/pandoc/pandoc-citeproc /usr/local/bin
 
-
 rm -rf /var/lib/apt/lists/*
