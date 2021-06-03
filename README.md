@@ -14,27 +14,49 @@ RUN mkdir -p /var/opt/workspaces && cd /tmp && \
     cp -Rf workspace-configs-2021q1-v1/* /var/opt/workspaces && \
     rm -rf /var/opt/workspaces/workspace-logos /var/opt/workspaces/README.md && \
     rm -rf /tmp/workspace-configs-2021q1-v1 /tmp/2021q1-v1.zip
+
+# Or you can also use the latest un-released changes from this repo
+RUN mkdir -p /var/opt/workspaces && cd /tmp && \
+    wget https://github.com/dominodatalab/workspace-configs/archive/refs/heads/develop.zip && \
+    unzip develop.zip && \
+    cp -Rf workspace-configs-develop/* /var/opt/workspaces && \
+    rm -rf /var/opt/workspaces/workspace-logos /var/opt/workspaces/README.md && \
+    rm -rf /tmp/workspace-configs-develop /tmp/develop.zip
 ```
 
-Following is an example to install a pluggable notebook in your base image.  
-Add this to your Dockerfile instructions in the target Domino compute environments:
+Add the desired workspaces to your Dockerfile instructions:
 ```bash
 # Install Jupyter from workspaces
 RUN chmod +x /var/opt/workspaces/jupyter/install && /var/opt/workspaces/jupyter/install
+
+# Install Jupyter Lab from workspaces
+RUN chmod +x /var/opt/workspaces/Jupyterlab/install && /var/opt/workspaces/Jupyterlab/install
+
+# Install R Studio from workspaces
+RUN chmod +x /var/opt/workspaces/rstudio/install && /var/opt/workspaces/rstudio/install
+
+# Install ttyd Terminal from workspaces
+RUN chmod +x /var/opt/workspaces/ttyd/install && /var/opt/workspaces/ttyd/install
+
+# Install VS Code from workspaces
+RUN chmod +x /var/opt/workspaces/vscode/install && /var/opt/workspaces/vscode/install
+
+# Install H2O Flow from workspaces
+RUN chmod +x /var/opt/workspaces/h2o/install && /var/opt/workspaces/h2o/install
+
+# Install Zeppelin from workspaces
+RUN chmod +x /var/opt/workspaces/Zeppelin/install && /var/opt/workspaces/Zeppelin/install
 ```
 
-Add the `properties.yaml` to Pluggable notebook properties in the Domino compute environments.  
-You can find the properties in corresponding notebook folder.
-```yaml
-jupyter:
-  title: "Jupyter (Python, R, Julia)"
-  iconUrl: "https://raw.github.com/dominodatalab/workspace-configs/develop/workspace-logos/Jupyter.svg?sanitize=true"
-  start: [ "/var/opt/workspaces/jupyter/start" ]
-  httpProxy:
-    port: 8888
-    rewrite: false
-    internalPath: "/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
-```
+Add the `properties.yaml` to Pluggable Workspace Tools.  
+Workspace Properties:
+- [Jupyter](/jupyter/properties.yaml)
+- [Jupyter Lab](/Jupyterlab/properties.yaml)
+- [R Studio](/rstudio/properties.yaml)
+- [ttyd Terminal](/ttyd/properties.yaml)
+- [VS Code](/vscode/properties.yaml)
+- [H2O Flow](/h2o/properties.yaml)
+- [Zeppelin](/Zeppelin/properties.yaml)
 
 
 # Project Structure
